@@ -4,7 +4,7 @@ var schema = mongoose.Schema;
 var requestURL = require('request');
 var moment = require('moment');
 var ejs = require('ejs'); //embedded javascript template engine
-var app = express();
+var app = module.exports = express.createServer();
 
 //------------------------- DATABASE CONFIGURATION -----------------------------//
 app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
@@ -14,23 +14,22 @@ require('./models').configureSchema(schema, mongoose);
 
 // Define your DB Model variables
 var Project = mongoose.model('Project');
-var User = mongoose.model('User');
 //------------------------- END DATABASE CONFIGURATION -----------------------------//
 
 //------------------------SERVER CONFIGURATION--------------------//
 app.configure(function() {
     
-    app.engine('.html', require('ejs').__express);  //use .html files instead of .ejs
+    app.register('html',require('ejs')); //use .html files in /views instead .ejs extension
     app.set('views', __dirname + '/views'); //store all templates inside /views
     app.set('view engine', 'ejs'); // ejs is our template engine
     app.set('view options',{layout:true}); // use /views/layout.html to manage your main header/footer wrapping template
     
+    // define the static directory for css, img and js files
+    app.use(express.static(__dirname + '/static'));
+
     app.use(express.cookieParser());//Cookies must be turned on for Sessions
     app.use(express.bodyParser());
     app.use(express.methodOverride());
-    
-    // define the static directory for css, img and js files
-    app.use(express.static(__dirname + '/static'));
   
     /**** Turn on some debugging tools ****/
     app.use(express.logger());
@@ -50,30 +49,36 @@ app.get('/', function(request, response) {
 app.post('/', function(request,response) {
     console.log('posting new project');
     
-    var userData = {
-        name : request.body.creativeName
-        , email : request.body.creativeEmail
-        , office : request.body. creativeOffice        
-    }
-    
     var projectData = {
-         projectName     : request.body.projectName
-        , clientName   : request.body.client
+          creativeName : request.body.creativeName
+        , creativeEmail : request.body.creativeEmail
+        , creativeOffice : request.body.creativeOffice
         , teamMembers : request.body.teamMembers
+        , projectName     : request.body.projectName
+        , clientName   : request.body.clientName
         , twitterPitch   : request.body.pitch
-        //, failedBecause      : request.body.??
+        , failedBecause      : request.body.checkbox
         //, user  : [User]
     }
     
+    console.log('******************************************************');
+    console.log('body is ' + request.body);
+    console.log(projectData);
+    
     // create a new blog post
     var project = new Project(projectData);
+    console.log(project);
     
     // save the blog post
     project.save();
-    console.log('project ' + project.projectName + 'saved');
+    console.log('project ' + project.projectName + ' saved');
     
-    response.redirect('thanks.html');
-}); 
+    response.redirect('/thanks');
+});
+
+app.get('/thanks', function(request,response) {
+    response.render('thanks.html');
+});
 
 // Make server turn on and listen at defined PORT (or port 3000 if is not defined)
 var port = process.env.PORT || 3000;

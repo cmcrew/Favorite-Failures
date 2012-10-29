@@ -1,0 +1,4 @@
+AuthType Basic  
+AuthName "restricted area"  
+AuthUserFile //var/chroot/home/content/89/9380189/html/favorite-failure/.htpasswd  
+require valid-user

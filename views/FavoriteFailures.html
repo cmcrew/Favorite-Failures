@@ -17,11 +17,11 @@
 	
 	<form action="" id="submitIdea" method="post">
 	    <label for="name">Your Name:</label><br/>
-	    <input type="text" name="creativeName" required placeholder="Name"/><br/><br/>
+	    <input type="text" name="creativeName" id="creativeName" required placeholder="Name"/><br/><br/>
 	    <label for="email">Your Email:</label><br/>
-	    <input type="email" name="creativeEmail" required placeholder="email@example.com"/><br/><br/>
-	    <label for="office">Your Razorfish Office:</label>            
-	    <select class="city" name="creativeOffice" form="submitIdea">
+	    <input type="email" name="creativeEmail" id="creativeEmail"required placeholder="email@example.com"/><br/><br/>
+	    <label for="office">Your Razorfish Office:</label>	
+	    <select class="city" name="creativeOffice" id="creativeOffice" form="submitIdea">
 		<option value="select">Select</option>
 		<option value="Digitas Philadelphia">Digitas Philadelphia</option>
 		<option value="Razorfish Atlanta">Razorfish Atlanta</option>
@@ -33,11 +33,10 @@
 		<option value="Razorfish New York">Razorfish New York</option>
 		<option value="Razorfish San Francisco">Razorfish San Francisco</option>
 		<option value="Razorfish Seattle">Razorfish Seattle</option>
-	    </select>
+	    </select><br/><br/>
 	    <label for="teammembers">Team Members (Optional)</label>
-	    <input type="text" name="teamMembers" placeholder="Team Members" /><br/><br/>
-	</form>
-    </div>
+	    <input type="text" name="teamMembers" id="teamMembers" placeholder="Team Members" /><br/><br/>	
+	</div>
     
     <span class="slideno">Who Failed?</span>        
     <a class="button" data-slide="2" title=""></a>
@@ -48,18 +47,13 @@
 
 <div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
     <div class="wrapper">
-	       
-	    <form action="" id="submitIdea" method="post">
-		<label for="client">I made this for: </label>
-		<input type="text" name="client" required placeholder="Client Name"/><br/><br/>
-		<label for="projectName">I called it: </label>
-		<input type="text" name="projectName" required placeholder="Project Name"/><br/><br/>
-	    </form> 
-    </div>
-    
+	<label for="client">I made this for: </label>
+	<input type="text" name="clientName" id="clientName" required placeholder="Client Name"/><br/><br/>
+	<label for="projectName">I called it: </label>
+	<input type="text" name="projectName" id="projectName" required placeholder="Project Name"/><br/><br/>
+    </div>    
     <span class="slideno">The Idea</span>
-    <a class="button" data-slide="3" title=""></a>
-    
+    <a class="button" data-slide="3" title=""></a>  
 </div>
 <!--End Slide 2-->
 
@@ -67,27 +61,23 @@
 
 <div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
     <div class="wrapper">
-	       
-	    <form action="" id="submitIdea" method="post">
-		This idea failed because it was too:<br/>
-		<ul id="categorylist">	
-		    <li><input type="checkbox" class="checkbox" value="risky" name="risky" id="risky"/><label for="risky"></label>Risky</li>
-		    <li><input type="checkbox" class="checkbox" value="expensive" name="expensive" id="expensive"/><label for="expensive"></label>Expensive</li>
-		    <li><input type="checkbox" class="checkbox" value="big" name="big" id="big"/><label for="big"></label>Big</li> 
-		    <li><input type="checkbox" class="checkbox" value="small" name="small" id="small"/><label for="small"></label>Small</li> 
-		    <li><input type="checkbox" class="checkbox" value="volatile" name="volatile" id="volatile"/><label for="volatile"></label>Volatile</li> 
-		    <li><input type="checkbox" class="checkbox" value="complicated" name="complicated" id="complicated"/><label for="complicated"></label>Complicated</li> 
-		    <li><input type="checkbox" class="checkbox" value="off-brand" name="off-brand" id="off-brand"/><label for="off-brand"></label>Off-Brand</li> 
-		    <li><input type="checkbox" class="checkbox" value="heady" name="heady" id="heady"/><label for="heady"></label>Heady</li> 
-		    <li><input type="checkbox" class="checkbox" value="funny" name="funny" id="funny"/><label for="funny"></label>Funny</li> 
-		    <li><input type="checkbox" class="checkbox" value="other" name="other" id="other"/><label for="other"></label>Other</li> 
-		</ul>
-	    </form> 
+	This idea failed because it was too:<br/>
+	<ul id="categorylist">	
+	    <li><input type="checkbox" class="checkbox" value="risky" name="risky" id="risky"/><label for="risky"></label>Risky</li>
+	    <li><input type="checkbox" class="checkbox" value="expensive" name="expensive" id="expensive"/><label for="expensive"></label>Expensive</li>
+	    <li><input type="checkbox" class="checkbox" value="big" name="big" id="big"/><label for="big"></label>Big</li> 
+	    <li><input type="checkbox" class="checkbox" value="small" name="small" id="small"/><label for="small"></label>Small</li> 
+	    <li><input type="checkbox" class="checkbox" value="volatile" name="volatile" id="volatile"/><label for="volatile"></label>Volatile</li> 
+	    <li><input type="checkbox" class="checkbox" value="complicated" name="complicated" id="complicated"/><label for="complicated"></label>Complicated</li> 
+	    <li><input type="checkbox" class="checkbox" value="off-brand" name="off-brand" id="off-brand"/><label for="off-brand"></label>Off-Brand</li> 
+	    <li><input type="checkbox" class="checkbox" value="heady" name="heady" id="heady"/><label for="heady"></label>Heady</li> 
+	    <li><input type="checkbox" class="checkbox" value="funny" name="funny" id="funny"/><label for="funny"></label>Funny</li> 
+	    <li><input type="checkbox" class="checkbox" value="other" name="other" id="other"/><label for="other"></label>Other</li> 
+	</ul>
     </div>
     
     <span class="slideno">The Failure</span>
-    <a class="button" data-slide="4" title=""></a>
-    
+    <a class="button" data-slide="4" title=""></a>    
 </div>
 <!--End Slide 3-->
 
@@ -95,17 +85,14 @@
 
 <div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0"">
     <div class="wrapper">
-	       
-	    <form action="" id="submitIdea" method="post">
-		<label for="pitch">Twitter Pitch: </label><br/>
-		<textarea name="pitch" class="pitch" maxlength="140" required placeholder="Describe your idea in 140 characters or less" rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
-		<span class="countdown" ></span><br/>
-		<label for="upload">Upload some stuff to support your idea! </label><br/>
-		<input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
-		<input type="submit" name="submit" class="submit"/>
-	    </form> 
+	<label for="pitch">Twitter Pitch: </label><br/>
+	<textarea name="pitch" class="pitch" maxlength="140" required placeholder="Describe your idea in 140 characters or less" rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
+	<span class="countdown" ></span><br/>
+	<label for="upload">Upload some stuff to support your idea! </label><br/>
+	<input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
+	<input type="submit" name="submit" class="submit"/>
     </div>
     <span class="slideno">The Pitch</span>
-
 </div>
 <!--End Slide 4-->
+	</form>
