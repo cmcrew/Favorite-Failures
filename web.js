@@ -1,3 +1,4 @@
+var http = require('http');
 var express = require('express');
 var mongoose = require('mongoose');
 var schema = mongoose.Schema; 

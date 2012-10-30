@@ -1,7 +1,6 @@
 // export Schemas to web.js
 module.exports.configureSchema = function(Schema, mongoose) {
-    
-    
+      
     // Project - 
     var Project = new Schema({
         timestamp : { type: Date, default: Date.now }
