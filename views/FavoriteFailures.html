@@ -1,6 +1,14 @@
 <!--Razorfish Logo -->
 <img class="razorfishlogo" src="images/rflogo.png">
-
+<!--Nav -->
+<ul class="navigation">
+    <li data-slide="1">1</li>
+    <li data-slide="2">2</li>
+    <li data-slide="3">3</li>
+    <li data-slide="4">4</li>
+</ul>
+<!--End Nav -->
+    
 <!--Slide 0-->
 <div class="slide" id="slide0" data-slide="0" data-stellar-background-ratio="0.5">
     <div class="wrapper" id="title">
@@ -39,43 +47,39 @@
     <a class="button" data-slide="1" title="">Begin</a>
 </div>
 <!--End Slide 0 -->
-
-    <!--Nav -->
-    <ul class="navigation">
-	<li data-slide="1">1</li>
-	<li data-slide="2">2</li>
-	<li data-slide="3">3</li>
-	<li data-slide="4">4</li>
-    </ul>
-    <!--End Nav -->
     
     <!--Slide 1-->
     <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
-	<div class="wrapper">
-	    
-	    <form action="" id="submitIdea" method="post">
-		<label for="name">Your Name:</label><br/>
-		<input type="text" name="creativeName" id="creativeName" required placeholder="Name"/><br/><br/>
-		<label for="email">Your Email:</label><br/>
-		<input type="email" name="creativeEmail" id="creativeEmail"required placeholder="email@example.com"/><br/><br/>
-		<label for="office">Your Razorfish Office:</label>	
-		<select class="city" name="creativeOffice" id="creativeOffice" form="submitIdea">
-		    <option value="select">Select</option>
-		    <option value="Digitas Philadelphia">Digitas Philadelphia</option>
-		    <option value="Razorfish Atlanta">Razorfish Atlanta</option>
-		    <option value="Razorfish Austin">Razorfish Austin</option>
-		    <option value="Razorfish Chicago">Razorfish Chicago</option>
-		    <option value="Razorfish Los Angeles">Razorfish Los Angeles</option>
-		    <option value="Razorfish Philadelphia">Razorfish Philadelphia</option>
-		    <option value="Razorfish Portland">Razorfish Portland</option>
-		    <option value="Razorfish New York">Razorfish New York</option>
-		    <option value="Razorfish San Francisco">Razorfish San Francisco</option>
-		    <option value="Razorfish Seattle">Razorfish Seattle</option>
-		</select><br/><br/>
-		<label for="teammembers">Team Members (Optional)</label>
-		<input type="text" name="teamMembers" id="teamMembers" placeholder="Team Members" /><br/><br/>	
+	<!--<img src="images/slide1/mailbox.png" data=stellar-ratio="1" data-stellar-vertical-offset="-102" alt="">-->
+	<div class="wrapper" id="yourinfo">
+	    <h1 class="yourinfo">First, Tell us about yourself</h1>
+	    <div class="form1">
+		<form action="" id="submitIdea" method="post">
+		    <label for="creativeName">Name</label>
+		    <input type="text" name="creativeName" id="creativeName" required /><br/>
+		    <label for="creativeEmail">Email</label>
+		    <input type="email" name="creativeEmail" id="creativeEmail"required/><br/>
+		    <label for="teamMembers">Team Members</label>
+		    <input type="text" name="teamMembers" id="teamMembers" placeholder=" Optional" /><br/>
+		    <label for="creativeOffice">Office</label>
+		   <!-- <div class="styled-select">-->
+			<select class="city" name="creativeOffice" id="creativeOffice" form="submitIdea">
+			    <option value="select">Select</option>
+			    <option value="Digitas Philadelphia">Digitas Philadelphia</option>
+			    <option value="Razorfish Atlanta">Razorfish Atlanta</option>
+			    <option value="Razorfish Austin">Razorfish Austin</option>
+			    <option value="Razorfish Chicago">Razorfish Chicago</option>
+			    <option value="Razorfish Los Angeles">Razorfish Los Angeles</option>
+			    <option value="Razorfish Philadelphia">Razorfish Philadelphia</option>
+			    <option value="Razorfish Portland">Razorfish Portland</option>
+			    <option value="Razorfish New York">Razorfish New York</option>
+			    <option value="Razorfish San Francisco">Razorfish San Francisco</option>
+			    <option value="Razorfish Seattle">Razorfish Seattle</option>
+			</select><br/>
+		   <!-- </div>-->
 	    </div>
-	
+	    <p class="address">Favorite Failure<br/>Razorfish, NY <span class="numbers">10018</span></p>
+	</div>	
 	<a class="button" data-slide="2" title="">Next</a>
     </div>
     <!--End Slide 1 -->
@@ -83,9 +87,9 @@
     <!--Slide 2-->
     <div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
 	<div class="wrapper">
-	    <label for="client">I made this for: </label>
+	    <label for="client">I made this for</label>
 	    <input type="text" name="clientName" id="clientName" required placeholder="Client Name"/><br/><br/>
-	    <label for="projectName">I called it: </label>
+	    <label for="projectName">I called it</label>
 	    <input type="text" name="projectName" id="projectName" required placeholder="Project Name"/><br/><br/>
 	</div>
 	<img src="images/slide2/page02a.png" alt="" class="transparency">
