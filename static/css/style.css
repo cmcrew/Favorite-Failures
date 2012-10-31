@@ -239,15 +239,15 @@ input#creativeEmail {
 input#teamMembers {
     width:55%;
 }
-.address {
+p.address {
     text-align:left;
     position:relative;
-    width: 35%;
+    width: 30%;
     top:30%;
-    left:20%;
+    left:25%;
     font-family: 'InTheKnow';
     color: rgba(102,102,102,0.3);
-    font-size:1.5em;
+    font-size:2.0em;
     letter-spacing: 1px;
 }
 .numbers {
