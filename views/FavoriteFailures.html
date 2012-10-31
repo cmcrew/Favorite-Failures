@@ -1,17 +1,23 @@
-<ul class="navigation">
-	    <li data-slide="1">1</li>
-	    <li data-slide="2">2</li>
-	    <li data-slide="3">3</li>
-	    <li data-slide="4">4</li>
-</ul>
-
-<div class="fflogo">
-    <h1>Hello World Presents</h1>
-    <p>Favorite Failure</p>
+<!--Slide 0-->
+<div class="slide" id="slide0" data-slide="0" data-stellar-background-ratio="0.5">
+    <div class="wrapper" id="title">
+	<h1><span class="HW">Hello World</span> <span class="presents">Presents</span> <span class="FF">Favorite Failure</span></h1>
+	<p>Everyone has a great idea that got killed. Tells us why yours deserves a second chance, and we might give it one.</p>
+    </div>
+    <a class="button" data-slide="1" title="">Begin</a>
 </div>
+<!--End Slide 0 -->
+
+<!--Nav -->
+<ul class="navigation">
+    <li data-slide="1">1</li>
+    <li data-slide="2">2</li>
+    <li data-slide="3">3</li>
+    <li data-slide="4">4</li>
+</ul>
+<!--End Nav -->
 
 <!--Slide 1-->
-
 <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
     <div class="wrapper">
 	
@@ -38,27 +44,24 @@
 	    <input type="text" name="teamMembers" id="teamMembers" placeholder="Team Members" /><br/><br/>	
 	</div>
     
-    <span class="slideno">Who Failed?</span>        
-    <a class="button" data-slide="2" title=""></a>
+    <a class="button" data-slide="2" title="">Next</a>
 </div>
 <!--End Slide 1 -->
 
 <!--Slide 2-->
-
 <div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
     <div class="wrapper">
 	<label for="client">I made this for: </label>
 	<input type="text" name="clientName" id="clientName" required placeholder="Client Name"/><br/><br/>
 	<label for="projectName">I called it: </label>
 	<input type="text" name="projectName" id="projectName" required placeholder="Project Name"/><br/><br/>
-    </div>    
-    <span class="slideno">The Idea</span>
-    <a class="button" data-slide="3" title=""></a>  
+    </div>
+    <img src="images/page02a.png" alt="" class="transparency">
+    <a class="button" data-slide="3" title="">Next</a>  
 </div>
 <!--End Slide 2-->
 
 <!--Slide 3-->
-
 <div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
     <div class="wrapper">
 	This idea failed because it was too:<br/>
@@ -75,24 +78,22 @@
 	    <li><input type="checkbox" class="checkbox" value="other" name="other" id="other"/><label for="other"></label>Other</li> 
 	</ul>
     </div>
-    
-    <span class="slideno">The Failure</span>
-    <a class="button" data-slide="4" title=""></a>    
+    <img src="images/page03a.png" alt="" class="transparency">
+    <a class="button" data-slide="4" title="">Next</a>    
 </div>
 <!--End Slide 3-->
 
 <!--Slide 4-->
-
 <div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0"">
-    <div class="wrapper">
+    <div class="wrapper">	
 	<label for="pitch">Twitter Pitch: </label><br/>
 	<textarea name="pitch" class="pitch" maxlength="140" required placeholder="Describe your idea in 140 characters or less" rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
 	<span class="countdown" ></span><br/>
 	<label for="upload">Upload some stuff to support your idea! </label><br/>
 	<input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
-	<input type="submit" name="submit" class="submit"/>
     </div>
-    <span class="slideno">The Pitch</span>
+    <img src="images/page04a.png" alt="" class="transparency">
+    <input type="submit" name="submit" class="button" title="">
 </div>
 <!--End Slide 4-->
 	</form>
