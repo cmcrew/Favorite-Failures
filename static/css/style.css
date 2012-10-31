@@ -68,7 +68,7 @@ html,body{
     margin: 0 auto;
     width: 90%;
     position:relative;
-    top: 30%;
+    top: 10%;
 }
 select.city {
     width: 320px;
@@ -93,14 +93,15 @@ input[type=submit].button{
 .button{
 	display:block;	
 	position:absolute;
-	bottom:0px;
+	bottom:1%;
 	left:50%;
-	font-size:1.5em;
+	font-family:'InTheKnow';
+	font-size:3.0em;
 	font-weight:bold;
-	color:rgba(255,255,255,0.3);
+	color:rgba(255,255,255,1.0);
 }
 .button:hover{
-	color:rgba(255,255,255,1.0);
+	color:rgba(255,255,255,0.5);
 	cursor:pointer;
 }
 /******************************
@@ -111,15 +112,52 @@ input[type=submit].button{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
-	
+	background-size: cover;	
 }
 
+.top-lights{
+    /* remove default list styles */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.top-lights li{
+    display:inline-block;
+    vertical-align:top;
+    padding-right:5%;
+}
+.middle-lights {
+    /* remove default list styles */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.middle-lights li {
+    display:inline-block;
+    vertical-align:top;
+    padding-right:5%;
+    padding-top:3%;
+}
+.bottom-lights{
+    /* remove default list styles */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.bottom-lights li {
+    display:inline-block;
+    vertical-align:top;
+    padding-right:5%;
+}
 #title{
     position:relative;
     width:80.5%;
+    height:100%;
     text-align:center;
     font-family:helvetica;
+}
+.title0{
+    padding-top:2%;
 }
 .HW{
     color:#CC6666;
