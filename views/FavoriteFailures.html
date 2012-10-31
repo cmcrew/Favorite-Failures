@@ -1,99 +1,104 @@
+<!--Razorfish Logo -->
+<img class="razorfishlogo" src="images/rflogo.png">
+
 <!--Slide 0-->
 <div class="slide" id="slide0" data-slide="0" data-stellar-background-ratio="0.5">
     <div class="wrapper" id="title">
 	<h1><span class="HW">Hello World</span> <span class="presents">Presents</span> <span class="FF">Favorite Failure</span></h1>
 	<p>Everyone has a great idea that got killed. Tells us why yours deserves a second chance, and we might give it one.</p>
+	
+	<img src="images/slide0/lightbulbon.png" data-stellar-ratio="1.4" data-stellar-vertical-offset="-102"alt="">
     </div>
     <a class="button" data-slide="1" title="">Begin</a>
 </div>
 <!--End Slide 0 -->
 
-<!--Nav -->
-<ul class="navigation">
-    <li data-slide="1">1</li>
-    <li data-slide="2">2</li>
-    <li data-slide="3">3</li>
-    <li data-slide="4">4</li>
-</ul>
-<!--End Nav -->
-
-<!--Slide 1-->
-<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
-    <div class="wrapper">
-	
-	<form action="" id="submitIdea" method="post">
-	    <label for="name">Your Name:</label><br/>
-	    <input type="text" name="creativeName" id="creativeName" required placeholder="Name"/><br/><br/>
-	    <label for="email">Your Email:</label><br/>
-	    <input type="email" name="creativeEmail" id="creativeEmail"required placeholder="email@example.com"/><br/><br/>
-	    <label for="office">Your Razorfish Office:</label>	
-	    <select class="city" name="creativeOffice" id="creativeOffice" form="submitIdea">
-		<option value="select">Select</option>
-		<option value="Digitas Philadelphia">Digitas Philadelphia</option>
-		<option value="Razorfish Atlanta">Razorfish Atlanta</option>
-		<option value="Razorfish Austin">Razorfish Austin</option>
-		<option value="Razorfish Chicago">Razorfish Chicago</option>
-		<option value="Razorfish Los Angeles">Razorfish Los Angeles</option>
-		<option value="Razorfish Philadelphia">Razorfish Philadelphia</option>
-		<option value="Razorfish Portland">Razorfish Portland</option>
-		<option value="Razorfish New York">Razorfish New York</option>
-		<option value="Razorfish San Francisco">Razorfish San Francisco</option>
-		<option value="Razorfish Seattle">Razorfish Seattle</option>
-	    </select><br/><br/>
-	    <label for="teammembers">Team Members (Optional)</label>
-	    <input type="text" name="teamMembers" id="teamMembers" placeholder="Team Members" /><br/><br/>	
-	</div>
+    <!--Nav -->
+    <ul class="navigation">
+	<li data-slide="1">1</li>
+	<li data-slide="2">2</li>
+	<li data-slide="3">3</li>
+	<li data-slide="4">4</li>
+    </ul>
+    <!--End Nav -->
     
-    <a class="button" data-slide="2" title="">Next</a>
-</div>
-<!--End Slide 1 -->
-
-<!--Slide 2-->
-<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
-    <div class="wrapper">
-	<label for="client">I made this for: </label>
-	<input type="text" name="clientName" id="clientName" required placeholder="Client Name"/><br/><br/>
-	<label for="projectName">I called it: </label>
-	<input type="text" name="projectName" id="projectName" required placeholder="Project Name"/><br/><br/>
+    <!--Slide 1-->
+    <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+	<div class="wrapper">
+	    
+	    <form action="" id="submitIdea" method="post">
+		<label for="name">Your Name:</label><br/>
+		<input type="text" name="creativeName" id="creativeName" required placeholder="Name"/><br/><br/>
+		<label for="email">Your Email:</label><br/>
+		<input type="email" name="creativeEmail" id="creativeEmail"required placeholder="email@example.com"/><br/><br/>
+		<label for="office">Your Razorfish Office:</label>	
+		<select class="city" name="creativeOffice" id="creativeOffice" form="submitIdea">
+		    <option value="select">Select</option>
+		    <option value="Digitas Philadelphia">Digitas Philadelphia</option>
+		    <option value="Razorfish Atlanta">Razorfish Atlanta</option>
+		    <option value="Razorfish Austin">Razorfish Austin</option>
+		    <option value="Razorfish Chicago">Razorfish Chicago</option>
+		    <option value="Razorfish Los Angeles">Razorfish Los Angeles</option>
+		    <option value="Razorfish Philadelphia">Razorfish Philadelphia</option>
+		    <option value="Razorfish Portland">Razorfish Portland</option>
+		    <option value="Razorfish New York">Razorfish New York</option>
+		    <option value="Razorfish San Francisco">Razorfish San Francisco</option>
+		    <option value="Razorfish Seattle">Razorfish Seattle</option>
+		</select><br/><br/>
+		<label for="teammembers">Team Members (Optional)</label>
+		<input type="text" name="teamMembers" id="teamMembers" placeholder="Team Members" /><br/><br/>	
+	    </div>
+	
+	<a class="button" data-slide="2" title="">Next</a>
     </div>
-    <img src="images/page02a.png" alt="" class="transparency">
-    <a class="button" data-slide="3" title="">Next</a>  
-</div>
-<!--End Slide 2-->
-
-<!--Slide 3-->
-<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
-    <div class="wrapper">
-	This idea failed because it was too:<br/>
-	<ul id="categorylist">	
-	    <li><input type="checkbox" class="checkbox" value="risky" name="risky" id="risky"/><label for="risky"></label>Risky</li>
-	    <li><input type="checkbox" class="checkbox" value="expensive" name="expensive" id="expensive"/><label for="expensive"></label>Expensive</li>
-	    <li><input type="checkbox" class="checkbox" value="big" name="big" id="big"/><label for="big"></label>Big</li> 
-	    <li><input type="checkbox" class="checkbox" value="small" name="small" id="small"/><label for="small"></label>Small</li> 
-	    <li><input type="checkbox" class="checkbox" value="volatile" name="volatile" id="volatile"/><label for="volatile"></label>Volatile</li> 
-	    <li><input type="checkbox" class="checkbox" value="complicated" name="complicated" id="complicated"/><label for="complicated"></label>Complicated</li> 
-	    <li><input type="checkbox" class="checkbox" value="off-brand" name="off-brand" id="off-brand"/><label for="off-brand"></label>Off-Brand</li> 
-	    <li><input type="checkbox" class="checkbox" value="heady" name="heady" id="heady"/><label for="heady"></label>Heady</li> 
-	    <li><input type="checkbox" class="checkbox" value="funny" name="funny" id="funny"/><label for="funny"></label>Funny</li> 
-	    <li><input type="checkbox" class="checkbox" value="other" name="other" id="other"/><label for="other"></label>Other</li> 
-	</ul>
+    <!--End Slide 1 -->
+    
+    <!--Slide 2-->
+    <div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+	<div class="wrapper">
+	    <label for="client">I made this for: </label>
+	    <input type="text" name="clientName" id="clientName" required placeholder="Client Name"/><br/><br/>
+	    <label for="projectName">I called it: </label>
+	    <input type="text" name="projectName" id="projectName" required placeholder="Project Name"/><br/><br/>
+	</div>
+	<img src="images/slide2/page02a.png" alt="" class="transparency">
+	<a class="button" data-slide="3" title="">Next</a>  
     </div>
-    <img src="images/page03a.png" alt="" class="transparency">
-    <a class="button" data-slide="4" title="">Next</a>    
-</div>
-<!--End Slide 3-->
-
-<!--Slide 4-->
-<div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0"">
-    <div class="wrapper">	
-	<label for="pitch">Twitter Pitch: </label><br/>
-	<textarea name="pitch" class="pitch" maxlength="140" required placeholder="Describe your idea in 140 characters or less" rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
-	<span class="countdown" ></span><br/>
-	<label for="upload">Upload some stuff to support your idea! </label><br/>
-	<input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
+    <!--End Slide 2-->
+    
+    <!--Slide 3-->
+    <div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+	<div class="wrapper">
+	    This idea failed because it was too:<br/>
+	    <ul id="categorylist">	
+		<li><input type="checkbox" class="checkbox" value="risky" name="risky" id="risky"/><label for="risky"></label>Risky</li>
+		<li><input type="checkbox" class="checkbox" value="expensive" name="expensive" id="expensive"/><label for="expensive"></label>Expensive</li>
+		<li><input type="checkbox" class="checkbox" value="big" name="big" id="big"/><label for="big"></label>Big</li> 
+		<li><input type="checkbox" class="checkbox" value="small" name="small" id="small"/><label for="small"></label>Small</li> 
+		<li><input type="checkbox" class="checkbox" value="volatile" name="volatile" id="volatile"/><label for="volatile"></label>Volatile</li> 
+		<li><input type="checkbox" class="checkbox" value="complicated" name="complicated" id="complicated"/><label for="complicated"></label>Complicated</li> 
+		<li><input type="checkbox" class="checkbox" value="off-brand" name="off-brand" id="off-brand"/><label for="off-brand"></label>Off-Brand</li> 
+		<li><input type="checkbox" class="checkbox" value="heady" name="heady" id="heady"/><label for="heady"></label>Heady</li> 
+		<li><input type="checkbox" class="checkbox" value="funny" name="funny" id="funny"/><label for="funny"></label>Funny</li> 
+		<li><input type="checkbox" class="checkbox" value="other" name="other" id="other"/><label for="other"></label>Other</li> 
+	    </ul>
+	</div>
+	<img src="images/slide3/page03a.png" alt="" class="transparency">
+	<a class="button" data-slide="4" title="">Next</a>    
     </div>
-    <img src="images/page04a.png" alt="" class="transparency">
-    <input type="submit" name="submit" class="button" title="">
-</div>
-<!--End Slide 4-->
+    <!--End Slide 3-->
+    
+    <!--Slide 4-->
+    <div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0"">
+	<div class="wrapper">	
+	    <label for="pitch">Twitter Pitch: </label><br/>
+	    <textarea name="pitch" class="pitch" maxlength="140" required placeholder="Describe your idea in 140 characters or less" rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
+	    <span class="countdown" ></span><br/>
+	    <label for="upload">Upload some stuff to support your idea! </label><br/>
+	    <input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
+	</div>
+	<img src="images/slide4/page04a.png" alt="" class="transparency">
+	<input type="submit" name="submit" class="button" title="">
+    </div>
+    <!--End Slide 4-->
 	</form>
