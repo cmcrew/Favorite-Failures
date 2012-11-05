@@ -1,7 +1,6 @@
 Alex_Gross
 node_modules
-.htpasswd
 .icon
 .DS_Store
 .dropbox
-users.passwd
+users.htpasswd
