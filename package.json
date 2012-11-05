@@ -1,8 +1,10 @@
 {
   "name": "favorite-failure",
+  "author": "Courtney Mitchell",
+  "description": "A form for submitting failed ideas",
   "version": "0.0.1",
   "dependencies": {
-    "express": "2.5.6",
+    "express": "3.x",
     "ejs" : "latest",
     "mongoose" : "3.3.1",
     "request" : "2.11.4",
