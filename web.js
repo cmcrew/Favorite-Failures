@@ -40,7 +40,8 @@ app.configure(function() {
 //requesting new authentication instance
 var basic = auth({
     authRealm : "Private area",
-    authFile : __dirname + '/users.htpasswd'
+    //authFile : __dirname + '/users.htpasswd'
+    authList : [process.env.HTPASSWD]
 });
 
 // main page - display form
