@@ -4,3 +4,4 @@ node_modules
 .icon
 .DS_Store
 .dropbox
+users.passwd

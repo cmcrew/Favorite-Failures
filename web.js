@@ -6,8 +6,7 @@ var requestURL = require('request');
 var moment = require('moment');
 var ejs = require('ejs'); //embedded javascript template engine
 var app = module.exports = express.createServer();
-//var app = express();
-
+var auth = require('http-auth'); //http authentication module
 //------------------------- DATABASE CONFIGURATION -----------------------------//
 app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
@@ -38,14 +37,20 @@ app.configure(function() {
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 //----------------------------END SERVER CONFIGURATION-------------------------------------------//
-
+//requesting new authentication instance
+var basic = auth({
+    authRealm : "Private area",
+    authFile : __dirname + '/users.htpasswd'
+});
 
 // main page - display form
 app.get('/', function(request, response) {
-    
+    //basic.apply(request,response, function(username) {
+        //response.send("Welcome to private area");
+        
+    //});
     // render the form
     response.render('FavoriteFailures.html');
-          
 });
 
 app.post('/', function(request,response) {
@@ -60,7 +65,6 @@ app.post('/', function(request,response) {
         , clientName   : request.body.clientName
         , twitterPitch   : request.body.pitch
         , failedBecause      : request.body.checkbox
-        //, user  : [User]
     }
     
     console.log('******************************************************');

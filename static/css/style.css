@@ -106,6 +106,23 @@ input[type=submit].button{
 	color:rgba(255,255,255,0.5);
 	cursor:pointer;
 }
+.submit {
+	background:none;
+	border:none;
+	display:block;	
+	position:absolute;
+	z-index:5;
+	bottom:1%;
+	left:50%;
+	font-family:'InTheKnow';
+	font-size:3.0em;
+	font-weight:bold;
+	color:rgba(255,255,255,1.0);
+}
+.submit:hover {
+    color:rgba(255,255,255,0.5);
+    cursor:pointer;
+}
 /******************************
  SLIDE 0 
 *******************************/
