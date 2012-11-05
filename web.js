@@ -45,10 +45,10 @@ var basic = auth({
 
 // main page - display form
 app.get('/', function(request, response) {
-    //basic.apply(request,response, function(username) {
+    basic.apply(request,response, function(username) {
         //response.send("Welcome to private area");
         
-    //});
+    });
     // render the form
     response.render('FavoriteFailures.html');
 });
