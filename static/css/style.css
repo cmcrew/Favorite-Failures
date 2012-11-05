@@ -96,7 +96,7 @@ input[type=submit].button{
 	position:absolute;
 	z-index:5;
 	bottom:1%;
-	left:50%;
+	left:48%;
 	font-family:'InTheKnow';
 	font-size:3.0em;
 	font-weight:bold;
@@ -134,39 +134,26 @@ input[type=submit].button{
 	background-size: cover;	
 }
 
-.top-lights{
+.top-lights,
+.middle-lights,
+.bottom-lights {
     /* remove default list styles */
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-.top-lights li{
+.top-lights li,
+.bottom-lights li {
     display:inline-block;
     vertical-align:top;
     padding-right:5%;
 }
-.middle-lights {
-    /* remove default list styles */
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
+
 .middle-lights li {
     display:inline-block;
     vertical-align:top;
     padding-right:5%;
     padding-top:3%;
-}
-.bottom-lights{
-    /* remove default list styles */
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.bottom-lights li {
-    display:inline-block;
-    vertical-align:top;
-    padding-right:5%;
 }
 .wrapper#title{
     position:relative;
@@ -201,7 +188,7 @@ input[type=submit].button{
     color:rgba(255,255,255,0.8);
     font-family:'InTheKnow';
     font-size:4.5em;
-    font-weight:bold;
+    font-weight:normal;
     letter-spacing:0.1em;
     position:relative;
     
@@ -272,13 +259,13 @@ h1.yourinfo {
     z-index:2;
     width: 50%;
     height:50%;
-    left:20%;
+    left:19%;
     top:10%;
     font-family: 'Dandelion';
-    color: #333366;
+    color: #2f3a45;
     font-size:1.5em;
     line-height:1.7em;
-    border:2px dotted purple;
+   /* border:2px dotted purple;*/
 }
 .form1 input,
 .form1 select {
@@ -313,7 +300,7 @@ li.name {
   /*  border:1px black solid; */
 }
 .yourphoto p {
-    color:#333366;
+    color:#2f3a45;
     float:right;
     text-align:right;
 }
@@ -357,6 +344,99 @@ select {
 	-o-background-size: cover;
 	background-size: cover;		
 }
+h1.projectinfo {
+    color:#2f3a45;
+    font-family:'InTheKnow';
+    font-size:4.0em;
+    font-weight:normal;
+    position:relative;
+    z-index:2;
+    margin: 0 auto;
+    top:3% !important;
+    text-align:center;
+    /* border:1px red solid; */
+}
+.shelves {
+    position:absolute;
+    top:10%;
+    z-index:0;
+    float:left;
+    width:100%;
+    height:50%;
+    overflow:hidden;
+    /* border:1px red solid; */
+}
+.shelves img {
+    z-index:1;
+    position:absolute;
+    height:100%;
+    top:0;
+}
+#projectinfo {
+    background-image:url(../images/slide2/book.png);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-origin:content-box;
+    text-align:left;
+    position:absolute;
+    width: 40%;
+    height:50%;
+    left:30%;
+    top:40%;
+    z-index:2;
+    font-family: 'Dandelion';
+    color: #2f3a45;
+    font-size:1.5em;
+    line-height:1.7em;
+    /* border:1px purple dotted; */
+}
+.client{
+    position:relative;
+    float:left;
+    width:40%;
+    left:5%;
+    top:25%;
+    /*border:1px blue dashed;*/
+}
+.title {
+    position:relative;
+    top:25%;
+    width:40%;
+    right:5%;
+    float:right;
+   /* border:1px green dashed;*/
+}
+.client input,
+.title input {
+    max-width:90%;
+    display:inline;
+    line-height:1.2em;
+    padding-top:5px;
+    padding-left:5px;
+    margin-left:3%;
+    margin-top: 5%;
+}
+.client label,
+.title label {
+    display:block;
+    margin-bottom:10px;
+    font-family: 'InTheKnow';
+    font-size:2.0em;
+    letter-spacing:1px;
+    text-align: left;
+    padding-left:7px;
+}
+.book img{
+    z-index:1;
+    position:absolute;  
+    bottom:0;
+    max-width:100%;
+}
+
+#slide2button {
+    color:#2f3a45;
+}
+
 
 /******************************
  SLIDE 3 
