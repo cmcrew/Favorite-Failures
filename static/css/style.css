@@ -74,7 +74,7 @@ html,body{
     width: 90%; /* arbitrary - looks best */
     position:relative;
     top: 10%;
-    border:1px black dashed;
+    /*border:1px black dashed;*/
 
 }
 .countdown{
@@ -156,7 +156,7 @@ input[type=submit].button{
     height:auto;
     text-align:center;
     font-family:helvetica;
-    border:1px green solid;
+    /*border:1px green solid;*/
 
 }
 .title0{
@@ -230,7 +230,7 @@ p{
     z-index:2;
     height:100%;
     text-align:center;
-    border:1px green solid;
+    /*border:1px green solid;*/
 }
 h1.yourinfo {
     color:rgba(255,255,255,0.8);
