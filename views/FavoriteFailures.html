@@ -50,18 +50,28 @@
     
     <!--Slide 1-->
     <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
-	<!--<img src="images/slide1/mailbox.png" data=stellar-ratio="1" data-stellar-vertical-offset="-102" alt="">-->
+	<div class="mailbox">
+		<img src="images/slide1/mbx.png" alt="">
+		<h1 class="yourinfo">First, Tell us about yourself</h1>
+	</div>
 	<div class="wrapper" id="yourinfo">
-	    <h1 class="yourinfo">First, Tell us about yourself</h1>
-	    <div class="form1">
-		<form action="" id="submitIdea" method="post">
-		    <label for="creativeName">Name</label>
-		    <input type="text" name="creativeName" id="creativeName" required /><br/>
-		    <label for="creativeEmail">Email</label>
-		    <input type="email" name="creativeEmail" id="creativeEmail"required/><br/>
-		    <label for="teamMembers">Team Members</label>
-		    <input type="text" name="teamMembers" id="teamMembers" placeholder=" Optional" /><br/>
-		    <label for="creativeOffice">Office</label>
+    	    <form action="" id="submitIdea" method="post">	
+		<ul class="form1">
+		    <div class="yourphoto">
+			<input type="file" name="Upload a photo">
+			<div class="fakefile">
+			    <input />
+			    <img src="images/slide1/stamp.png" alt="your photo">			
+			</div>
+			<p>Upload a photo</p>
+		    </div>
+		    <li class="name"> <label for="creativeName">Name</label>
+			<input type="text" name="creativeName" id="creativeName" required /></li>
+		    <li><label for="creativeEmail">Email</label>
+			<input type="email" name="creativeEmail" id="creativeEmail"required/></li>
+		    <li><label for="teamMembers">Team Members</label>
+			<input type="text" name="teamMembers" id="teamMembers" placeholder=" Optional" /></li>
+		    <li><label for="creativeOffice">Office</label>
 			<select class="city" name="creativeOffice" id="creativeOffice" form="submitIdea">
 			    <option value="select">Select</option>
 			    <option value="Digitas Philadelphia">Digitas Philadelphia</option>
@@ -74,10 +84,10 @@
 			    <option value="Razorfish New York">Razorfish New York</option>
 			    <option value="Razorfish San Francisco">Razorfish San Francisco</option>
 			    <option value="Razorfish Seattle">Razorfish Seattle</option>
-			</select><br/>
-	    </div>
-	    <p class="address">Favorite Failure <br/>Razorfish, NY <span class="numbers">10018</span></p>
-	</div>	
+			</select>
+		    </li>			
+		</ul>		
+    	</div>
 	<a class="button" data-slide="2" title="">Next</a>
     </div>
     <!--End Slide 1 -->

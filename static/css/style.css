@@ -71,9 +71,11 @@ html,body{
     font-family: 'helvetica';
     font-size:1.0em;
     margin: 0 auto;
-    width: 90%;
+    width: 90%; /* arbitrary - looks best */
     position:relative;
     top: 10%;
+    border:1px black dashed;
+
 }
 .countdown{
     position: relative;
@@ -92,6 +94,7 @@ input[type=submit].button{
 .button{
 	display:block;	
 	position:absolute;
+	z-index:5;
 	bottom:1%;
 	left:50%;
 	font-family:'InTheKnow';
@@ -148,12 +151,13 @@ input[type=submit].button{
     vertical-align:top;
     padding-right:5%;
 }
-#title{
+.wrapper#title{
     position:relative;
-    width:80.5%;
-    height:100%;
+    height:auto;
     text-align:center;
     font-family:helvetica;
+    border:1px green solid;
+
 }
 .title0{
     padding-top:2%;
@@ -194,76 +198,134 @@ p{
  SLIDE 1 
 *******************************/
 #slide1{
-	background-image:url(../images/slide1/page01MBL.jpg);
+	background-image:url(../images/slide1/page01.jpg);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;	
+	background-size: cover;
+	min-width:960px;
 }
-#yourinfo{
+.mailbox {
     position:relative;
-    width:80.5%;
+    z-index:1;
+    float:right;
+    margin-right:0;
+    overflow:hidden;
+    bottom:0;
+    width:77.734%;
+    height:100%;
+    /*border:1px red solid;*/
+
+}
+.mailbox img{
+    z-index:1;
+    position:absolute;
+    right:0;
+    bottom:0;
+    max-width:100%;
+}
+
+.wrapper#yourinfo{
+    position:relative;
+    z-index:2;
     height:100%;
     text-align:center;
-    top:1% !important;
+    border:1px green solid;
 }
-.yourinfo {
+h1.yourinfo {
     color:rgba(255,255,255,0.8);
     font-family:'InTheKnow';
     font-size:3.5em;
     font-weight:normal;
     position:relative;
-    text-align:center;
-}
-.form1 {
+    z-index:2;
+    top:5% !important;
     text-align:left;
-    position:relative;
-    width: 30%;
-    top:25%;
+    padding-left:20%;
+    /*border:1px red solid;*/
+
+}
+.form1{
+    background-image:url(../images/slide1/letter.png);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-origin:content-box;
+    text-align:left;
+    position:absolute;
+    z-index:2;
+    width: 50%;
+    height:50%;
+    left:20%;
+    top:10%;
     font-family: 'Dandelion';
     color: #333366;
     font-size:1.5em;
     line-height:1.7em;
+    border:2px dotted purple;
 }
-input {
+.form1 input,
+.form1 select {
+    display:inline;
     float:right;
     line-height:1.2em;
     padding-top:5px;
+    padding-left:5px;
 }
-input#creativeName {
-    width:75%;
+.form1 li {
+    margin-left:20px;
+    width:50%;
 }
-input#creativeEmail {
-    width:75%;
+li input#creativeName,
+li input#creativeEmail,
+li select {
+    width:65%;
 }
-input#teamMembers {
-    width:55%;
+li input#teamMembers {
+    width:35%;
 }
-p.address {
-    text-align:left;
+li.name {
+    margin-top:20px;
+}
+.yourphoto {
     position:relative;
-    width: 30%;
-    top:30%;
-    left:25%;
-    font-family: 'InTheKnow';
-    color: rgba(102,102,102,0.3);
-    font-size:2.0em;
-    letter-spacing: 1px;
+    width:30%;
+    height:auto;
+    float:right;
+    margin-right:20px;
+    margin-top:20px;
+  /*  border:1px black solid; */
 }
-.numbers {
-    font-family: 'Dandelion';
+.yourphoto p {
+    color:#333366;
+    float:right;
+    text-align:right;
+}
+.fakefile {
+    position:relative;
+    top:0;
+    z-index:1;
+}
+.yourphoto img,
+.yourphoto input {
+    float:right;
+}
+.yourphoto input {
+    position:absolute;
+    width:100%;
+    height:100%;
+    right:0;
+    z-index:2;
+    opacity:0;
+}
+.yourphoto input:hover {
+    cursor:pointer;
 }
 select {
     -webkit-appearance:none;
     -moz-appearance:none;
     -webkit-border-radius:0;
-    -moz-border-radius:0;
-    line-height:1.2em;
-    padding-top:5px;
-    padding-left:5px;
-    width:75%;
+    -moz-border-radius:0;    
     background:#FFF url(../images/slide1/arrow.png) no-repeat right center;
-    float:right;
     border: 2px inset;
     cursor:pointer;
 }
