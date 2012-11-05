@@ -387,3 +387,19 @@ img.transparency{
 	left:0;
 	width:100%;
 }
+/******************************
+ THANKS PAGE
+*******************************/
+.thanks {
+    margin:0 auto;
+    top:10%;
+    font-family:'InTheKnow';
+    font-size:4.0em;
+    text-align:center;
+    letter-spacing:0.1em;
+    position:relative;  
+}
+.thanks a {
+    font-size:0.75em;
+    letter-spacing:normal;
+}
