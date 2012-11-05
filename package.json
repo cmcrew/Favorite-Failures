@@ -4,7 +4,8 @@
   "description": "A form for submitting failed ideas",
   "version": "0.0.1",
   "dependencies": {
-    "express": "3.x",
+    "express": "2.x",
+    "connect": "2.x",
     "ejs" : "latest",
     "mongoose" : "3.3.1",
     "request" : "2.11.4",

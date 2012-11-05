@@ -6,6 +6,7 @@ var requestURL = require('request');
 var moment = require('moment');
 var ejs = require('ejs'); //embedded javascript template engine
 var app = module.exports = express.createServer();
+//var app = express();
 
 //------------------------- DATABASE CONFIGURATION -----------------------------//
 app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
