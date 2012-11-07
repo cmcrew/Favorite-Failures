@@ -75,22 +75,11 @@ html,body{
     position:relative;
     top: 10%;
     /*border:1px black dashed;*/
-
 }
-.countdown{
-    position: relative;
-    font-size: 18px;
-    left: 485px;
-}
-.pitch{
-    font-size: 18px;
-}
-
 input[type=submit].button{
   background:none;
   border:none;
 }
-
 .button{
 	display:block;	
 	position:absolute;
@@ -222,7 +211,6 @@ p{
 
 }
 .mailbox img{
-    z-index:1;
     position:absolute;
     right:0;
     bottom:0;
@@ -250,6 +238,10 @@ h1.yourinfo {
 
 }
 .form1{
+    -webkit-transform:rotate(-5deg); /* Safari and Chrome */
+    -ms-transform:rotate(-5deg); /* IE 9 */
+    -moz-transform:rotate(-5deg); /* Firefox */
+    -o-transform:rotate(-5deg); /* Opera */
     background-image:url(../images/slide1/letter.png);
     background-size:100% 100%;
     background-repeat:no-repeat;
@@ -259,7 +251,7 @@ h1.yourinfo {
     z-index:2;
     width: 50%;
     height:50%;
-    left:19%;
+    left:18%;
     top:10%;
     font-family: 'Dandelion';
     color: #2f3a45;
@@ -436,6 +428,16 @@ h1.projectinfo {
 #slide2button {
     color:#2f3a45;
 }
+#slide2button:hover {
+    color:#B0B0B0;
+}
+
+.logodark {
+    position:absolute;
+    bottom:1%;
+    left:1%;
+    z-index:2;
+}
 
 
 /******************************
@@ -447,6 +449,32 @@ h1.projectinfo {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;	
+}
+.failureinfo {
+    position:relative;
+    margin: 0 auto;
+    top:3% !important;
+}
+.failureinfo h1 {
+    color:rgb(255,255,255);
+    font-family:'InTheKnow';
+    font-size:4.0em;
+    font-weight:normal;
+    z-index:2;
+    text-align:center;
+  /*  border:1px red solid;*/
+}
+.failureinfo p {
+    font-size: 1.1em;
+    line-height:1.2em;
+    font-family:'helvetica';
+    text-align:center;
+    color:rgb(255,255,255);
+   /* border:1px green solid;*/
+}
+#expensive {
+    border:2px solid red;
+    background-image: url(../images/slide3/expensive.png);
 }
 
 /******************************
@@ -467,6 +495,15 @@ img.transparency{
 	left:0;
 	width:100%;
 }
+.countdown{
+    position: relative;
+    font-size: 18px;
+    left: 485px;
+}
+.pitch{
+    font-size: 18px;
+}
+
 /******************************
  THANKS PAGE
 *******************************/
