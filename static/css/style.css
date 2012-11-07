@@ -235,7 +235,6 @@ h1.yourinfo {
     text-align:left;
     padding-left:20%;
     /*border:1px red solid;*/
-
 }
 .form1{
     -webkit-transform:rotate(-5deg); /* Safari and Chrome */
@@ -312,6 +311,9 @@ li.name {
     right:0;
     z-index:2;
     opacity:0;
+    -moz-opacity:0;
+    filter:alpha(opacity: 0);
+    position: relative;
 }
 .yourphoto input:hover {
     cursor:pointer;
@@ -450,6 +452,9 @@ h1.projectinfo {
 	-o-background-size: cover;
 	background-size: cover;	
 }
+#failureinfo {
+    height:61%;
+}
 .failureinfo {
     position:relative;
     margin: 0 auto;
@@ -472,11 +477,103 @@ h1.projectinfo {
     color:rgb(255,255,255);
    /* border:1px green solid;*/
 }
-#expensive {
-    border:2px solid red;
-    background-image: url(../images/slide3/expensive.png);
+/******************************* COLUMN 1 ****************************************/
+ul#column1 {
+    position:absolute;
+    display:block;
+    width:15%;
+    height:100%;
+    border:1px solid green;
+}
+#column1 li#ex {
+    position:absolute;
+    bottom:0;
+    z-index:3;
+    width:100%;
+    height:29%;
+    border:1px solid blue;   
+}
+#column1 li#of {
+    position:absolute;
+    right:0;
+    bottom:29%;
+    z-index:3;
+    width:73%;
+    height: 19%;
+    border: 1px solid blue;
+}
+.expensiveimage {
+    max-width:100%;
+    border:1px solid red;
+}
+.expensiveimage img,
+.offensiveimage img {
+    max-width:100%;
+}
+.expensiveimage img:hover,
+.offensiveimage img:hover,
+.safeimage img:hover,
+.legalimage img:hover,
+.confusingimage img:hover {
+    cursor:pointer;
+}
+.offensiveimage {
+    max-width:100%;
+    position:absolute;
+    right:0;
+    border:1px solid red;
+}
+/******************************* COLUMN 2 ****************************************/
+ul#column2 {
+    position:absolute;
+    display:block;
+    left:15%;
+    width:20%;
+    height:100%;
+    border:1px solid green;
+}
+#column2 li#sfe,
+#column2 li#cnf,
+#column2 li#leg {
+    border:1px red solid;
 }
 
+#column2 li#leg {
+    position:absolute;
+    z-index:3;
+    bottom:0;
+    max-width:100%;
+    border:1px solid blue;
+}
+#column2 li#leg img{
+    max-width:100%;
+}
+#column2 li#cnf {
+    position:absolute;
+    z-index:3;
+    bottom:30%;
+    border:1px solid blue;
+}
+#column2 li#cnf img{
+    max-width:100%;
+}
+#column2 li#sfe {
+    position:absolute;
+    z-index:3;
+    max-width:100%;
+    bottom:60%;
+    border:1px solid blue;
+}
+#column2 li#sfe img{
+    max-width:100%;
+}
+/******************************* COLUMN 2 ****************************************/
+
+input[type=checkbox] {
+    display:none;
+    position: relative;
+    z-index: 4;
+}
 /******************************
  SLIDE 4 
 *******************************/
