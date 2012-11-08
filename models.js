@@ -13,8 +13,7 @@ module.exports.configureSchema = function(Schema, mongoose) {
       , clientName   : {type: String, required: true}
       , twitterPitch   : {type: String, required: true}
       , failedBecause      : String
-      //, uploads : [uploadSchema]
-    
+      //, uploads : [uploadSchema]    
     });
 
     // add schemas to Mongoose
