@@ -477,97 +477,207 @@ h1.projectinfo {
     color:rgb(255,255,255);
    /* border:1px green solid;*/
 }
+ul#column1,
+ul#column2,
+ul#column3,
+ul#column4,
+ul#column5 {
+   /* border:1px solid green;*/
+}
+.expensiveimage img:hover,
+.offensiveimage img:hover,
+.safeimage img:hover,
+.legalimage img:hover,
+.confusingimage img:hover,
+.bigimage img:hover,
+.smallimage img:hover,
+.dangerousimage img:hover,
+.offbrandimage img:hover,
+.funnyimage img:hover,
+.riskyimage img:hover,
+.otherimage img:hover {
+    cursor:pointer;
+}
 /******************************* COLUMN 1 ****************************************/
 ul#column1 {
     position:absolute;
     display:block;
     width:15%;
     height:100%;
-    border:1px solid green;
+}
+#column1 li#ex,
+#column1 li#of {
+   /* border:1px solid blue;   */
 }
 #column1 li#ex {
     position:absolute;
     bottom:0;
     z-index:3;
-    width:100%;
-    height:29%;
-    border:1px solid blue;   
 }
 #column1 li#of {
     position:absolute;
+    bottom:28%;
     right:0;
-    bottom:29%;
     z-index:3;
-    width:73%;
-    height: 19%;
-    border: 1px solid blue;
 }
-.expensiveimage {
+.expensiveimage,
+.offensiveimage {
     max-width:100%;
-    border:1px solid red;
+   /* border:1px solid red;*/
 }
 .expensiveimage img,
 .offensiveimage img {
     max-width:100%;
 }
-.expensiveimage img:hover,
-.offensiveimage img:hover,
-.safeimage img:hover,
-.legalimage img:hover,
-.confusingimage img:hover {
-    cursor:pointer;
-}
-.offensiveimage {
-    max-width:100%;
-    position:absolute;
-    right:0;
-    border:1px solid red;
-}
+
 /******************************* COLUMN 2 ****************************************/
 ul#column2 {
     position:absolute;
     display:block;
-    left:15%;
-    width:20%;
+    left:16%;
+    width:16%;
     height:100%;
-    border:1px solid green;
 }
 #column2 li#sfe,
 #column2 li#cnf,
 #column2 li#leg {
-    border:1px red solid;
+  /*  border:1px blue solid;*/
 }
-
 #column2 li#leg {
     position:absolute;
     z-index:3;
     bottom:0;
-    max-width:100%;
-    border:1px solid blue;
-}
-#column2 li#leg img{
-    max-width:100%;
 }
 #column2 li#cnf {
     position:absolute;
     z-index:3;
     bottom:30%;
-    border:1px solid blue;
-}
-#column2 li#cnf img{
-    max-width:100%;
+    left:5%;
 }
 #column2 li#sfe {
     position:absolute;
     z-index:3;
-    max-width:100%;
-    bottom:60%;
-    border:1px solid blue;
+    bottom:58%;
+    left:5%;
 }
-#column2 li#sfe img{
+.legalimage,
+.safeimage,
+.confusingimage {
+    max-width:100%;
+  /*  border:1px solid red;*/
+}
+#column2 li#leg img,
+#column2 li#sfe img,
+#column2 li#cnf img {
     max-width:100%;
 }
-/******************************* COLUMN 2 ****************************************/
+/******************************* COLUMN 3 ****************************************/
+ul#column3 {
+    position:absolute;
+    display:block;
+    left:33%;
+    width:26%;
+    height:100%;
+}
+#column3 li#bg,
+#column3 li#ob,
+#column3 li#sm,
+#column3 li#dg{
+  /*  border:1px blue solid;*/
+}
+#column3 li#bg {
+    position:absolute;
+    z-index:3;
+    bottom:0;
+}
+#column3 li#ob {
+    position:absolute;
+    z-index:3;
+    bottom:50%;
+}
+#column3 li#dg {
+    position:absolute;
+    z-index:3;
+    bottom:50%;
+    right:0;
+}
+#column3 li#sm {
+    position:absolute;
+    z-index:3;
+    bottom:78%;
+    right:30%;
+}
+.bigimage,
+.smallimage,
+.dangerousimage,
+.offbrandimage {
+    max-width:100%;
+  /*  border:1px solid red;*/
+}
+#column3 li#bg img,
+#column3 li#sm img,
+#column3 li#ob img,
+#column3 li#dg img {
+    max-width:100%;
+}
+/******************************* COLUMN 4 ****************************************/
+ul#column4 {
+    position:absolute;
+    display:block;
+    left:60%;
+    width:23%;
+    height:100%;
+}
+#column4 li#fn,
+#column4 li#rk{
+ /*   border:1px blue solid;*/
+}
+
+#column4 li#rk{
+    position:absolute;
+    z-index:3;
+    bottom:0;
+}
+#column4 li#fn {
+    position:absolute;
+    z-index:3;
+    bottom:31%;
+    right:0;
+}
+.funnyimage,
+.riskyimage {
+    max-width:100%;
+  /*  border:1px solid red;*/
+}
+#column4 li#fn img,
+#column4 li#rk img {
+    max-width:100%;
+}
+/******************************* COLUMN 5 ****************************************/
+ul#column5 {
+    position:absolute;
+    display:block;
+    left:84%;
+    width:16%;
+    height:100%;
+}
+#column5 li#oth{
+  /*  border:1px blue solid;*/
+}
+#column5 li#oth {
+    position:absolute;
+    z-index:3;
+    bottom:0;
+    right:0;
+}
+.otherimage {
+    max-width:100%;
+  /*  border:1px solid red;*/
+}
+#column5 li#oth img {
+    max-width:100%;
+}
+/******************************* END COLUMNS ****************************************/
 
 input[type=checkbox] {
     display:none;

@@ -1,12 +1,11 @@
 jQuery(document).ready(function ($) {
-    
 
     //initialise Stellar.js
     $(window).stellar();
 
     updateCountdown();
     $('.pitch').change(updateCountdown);
-    $('.pitch').keyup(updateCountdown);
+    $('.pitch').keyup(updateCountdown);    
     
     //Cache some variables
     var links = $('.navigation').find('li');
@@ -20,6 +19,7 @@ jQuery(document).ready(function ($) {
     var remaining = 140 - jQuery('.pitch').val().length;
     jQuery('.countdown').text(remaining);
     }
+    
 
     //Setup waypoints plugin
     slide.waypoint(function (event, direction) {
@@ -57,8 +57,6 @@ jQuery(document).ready(function ($) {
         }, 2000, 'easeInOutQuint');
     }
 
-
-
     //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
     links.click(function (e) {
         e.preventDefault();
@@ -73,6 +71,16 @@ jQuery(document).ready(function ($) {
         goToByScroll(dataslide);
 
     });
-
+    
+    //function to change color of logo from light to dark on slide 3
+    function changeLogoColor() {
+        var logo = $('.razorfishlogo');
+        if(dataslide === '2') {
+            $('.razorfishlogo').attr('src', 'images/rflogodark.png');
+        }
+        else {
+            $('.razorfishlogo').attr('src', 'images/rflogo.png');
+        }
+    }
 
 });

@@ -8,7 +8,7 @@ var ejs = require('ejs'); //embedded javascript template engine
 var app = module.exports = express.createServer();
 var auth = require('http-auth'); //http authentication module
 //------------------------- DATABASE CONFIGURATION -----------------------------//
-//app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
 // Include models.js - this file includes the database schema and defines the models used
 require('./models').configureSchema(schema, mongoose);
