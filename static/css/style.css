@@ -451,8 +451,10 @@ h1.projectinfo {
 	-o-background-size: cover;
 	background-size: cover;	
 }
-#failureinfo {
+.wrapper#failureinfo {
     height:61%;
+    width:80%;
+   /* border:1px solid yellow;*/
 }
 .failureinfo {
     position:relative;
@@ -501,7 +503,7 @@ ul#column5 {
 ul#column1 {
     position:absolute;
     display:block;
-    width:15%;
+    width:16%;
     height:100%;
 }
 #column1 li#ex,
@@ -515,7 +517,7 @@ ul#column1 {
 }
 #column1 li#of {
     position:absolute;
-    bottom:28%;
+    bottom:25%;
     left:30%;
     z-index:3;
 }
@@ -533,7 +535,7 @@ ul#column1 {
 ul#column2 {
     position:absolute;
     display:block;
-    left:18%;
+    left:17%;
     width:16%;
     height:100%;
 }
@@ -550,13 +552,13 @@ ul#column2 {
 #column2 li#cnf {
     position:absolute;
     z-index:3;
-    bottom:30%;
+    bottom:27%;
     left:5%;
 }
 #column2 li#sfe {
     position:absolute;
     z-index:3;
-    bottom:58%;
+    bottom:53%;
     left:5%;
 }
 .legalimage,
@@ -574,8 +576,8 @@ ul#column2 {
 ul#column3 {
     position:absolute;
     display:block;
-    left:37%;
-    width:24%;
+    left:34%;
+    width:26%;
     height:100%;
 }
 #column3 li#bg,
@@ -592,18 +594,18 @@ ul#column3 {
 #column3 li#ob {
     position:absolute;
     z-index:3;
-    bottom:50%;
+    bottom:47%;
 }
 #column3 li#dg {
     position:absolute;
     z-index:3;
-    bottom:50%;
+    bottom:47%;
     left:45%;
 }
 #column3 li#sm {
     position:absolute;
     z-index:3;
-    bottom:78%;
+    bottom:73%;
     left:45%;
 }
 .bigimage,
@@ -623,7 +625,7 @@ ul#column3 {
 ul#column4 {
     position:absolute;
     display:block;
-    left:64%;
+    left:61%;
     width:21%;
     height:100%;
 }
@@ -640,7 +642,7 @@ ul#column4 {
 #column4 li#fn {
     position:absolute;
     z-index:3;
-    bottom:31%;
+    bottom:28%;
     right:0;
 }
 .funnyimage,
@@ -656,8 +658,8 @@ ul#column4 {
 ul#column5 {
     position:absolute;
     display:block;
-    left:88%;
-    width:12%;
+    left:83%;
+    width:17%;
     height:100%;
 }
 #column5 li#oth{
@@ -681,7 +683,22 @@ ul#column5 {
 input[type=checkbox] {
    /* display:none;*/
     position: relative;
-    z-index: 4;
+   /* z-index: 4;*/
+}
+input[type=checkbox]{
+    display:none;
+}
+.myfailure span {
+    width:100px;
+    height:100px;
+    display:block;
+    background:url('../images/slide3/expensive.png');
+}
+.myfailure input + span:hover {
+    cursor:pointer;
+}
+.myfailure input:checked + span {
+    background:url('../images/slide3/expensivehover.png');
 }
 /******************************
  SLIDE 4 
