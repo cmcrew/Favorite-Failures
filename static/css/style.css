@@ -721,6 +721,17 @@ ul#column5 {
 .otherimage {
     background-image:url(../images/slide3/other.png);
 }
+input#reason {
+    position:absolute;
+    bottom:26%;
+    left:16%;
+    z-index:101;
+    display:block;
+    line-height:1.0em;
+    padding-top:5px;
+    padding-left:5px;
+    width:60%;
+}
 /******************************* END COLUMNS ****************************************/
 
 input[type=checkbox] {
