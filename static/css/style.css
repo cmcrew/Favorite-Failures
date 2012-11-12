@@ -478,6 +478,9 @@ h1.projectinfo {
     color:rgb(255,255,255);
    /* border:1px green solid;*/
 }
+
+/******************************* ALL COLUMNS ****************************************/
+/* column borders for testing/debugging */
 ul#column1,
 ul#column2,
 ul#column3,
@@ -485,19 +488,89 @@ ul#column4,
 ul#column5 {
   /*  border:1px solid green;*/
 }
-.expensiveimage img:hover,
-.offensiveimage img:hover,
-.safeimage img:hover,
-.legalimage img:hover,
-.confusingimage img:hover,
-.bigimage img:hover,
-.smallimage img:hover,
-.dangerousimage img:hover,
-.offbrandimage img:hover,
-.funnyimage img:hover,
-.riskyimage img:hover,
-.otherimage img:hover {
+
+/* li borders for testing/debugging */
+#column1 li#ex,
+#column1 li#of,
+#column2 li#sfe,
+#column2 li#cnf,
+#column2 li#leg,
+#column3 li#bg,
+#column3 li#ob,
+#column3 li#sm,
+#column3 li#dg,
+#column4 li#fn,
+#column4 li#rk,
+#column5 li#oth {
+  /*  border:1px solid blue;*/
+}
+/* Image Width */
+.expensiveimage img,
+.offensiveimage img,
+#column2 li#leg img,
+#column2 li#sfe img,
+#column2 li#cnf img,
+#column3 li#bg img,
+#column3 li#sm img,
+#column3 li#ob img,
+#column3 li#dg img,
+#column4 li#fn img,
+#column4 li#rk img,
+#column5 li#oth img {
+    max-width:100%;
+}
+/* style the individual checkbox */
+#expensive,
+#offensive,
+#legal,
+#safe,
+#confusing,
+#big,
+#small,
+#dangerous,
+#offbrand,
+#funny,
+#risky,
+#other {
+    height:100%;
+    width:100%;
+    position:absolute;
+    margin:0;
+    padding:0;
     cursor:pointer;
+    z-index:100;
+    opacity:0;
+}
+/* Hide selected image when checkbox is unchecked */
+input.failure:not(:checked) + img {
+    opacity:0;
+}
+/* Cool easing transition */
+input.failure + img {
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+/**************************style checkbox divs ***********************************/
+.offensiveimage,
+.expensiveimage,
+.legalimage,
+.safeimage,
+.confusingimage,
+.bigimage,
+.smallimage,
+.dangerousimage,
+.offbrandimage,
+.funnyimage,
+.riskyimage,
+.otherimage {
+    max-width:100%;
+    background-repeat:no-repeat;
+    background-size:contain;
+    position:relative;
+   /* border:1px solid red;*/
 }
 /******************************* COLUMN 1 ****************************************/
 ul#column1 {
@@ -506,10 +579,7 @@ ul#column1 {
     width:16%;
     height:100%;
 }
-#column1 li#ex,
-#column1 li#of {
-   /* border:1px solid blue;   */
-}
+
 #column1 li#ex {
     position:absolute;
     bottom:0;
@@ -521,15 +591,15 @@ ul#column1 {
     left:30%;
     z-index:3;
 }
-.expensiveimage,
+
+/* Size the div holding the checkbox and image */
+.expensiveimage{
+    background-image:url(../images/slide3/expensive.png);
+}
 .offensiveimage {
-    max-width:100%;
-   /* border:1px solid red;*/
+    background-image:url(../images/slide3/offensive.png);
 }
-.expensiveimage img,
-.offensiveimage img {
-    max-width:100%;
-}
+
 
 /******************************* COLUMN 2 ****************************************/
 ul#column2 {
@@ -539,11 +609,7 @@ ul#column2 {
     width:16%;
     height:100%;
 }
-#column2 li#sfe,
-#column2 li#cnf,
-#column2 li#leg {
-  /*  border:1px blue solid;*/
-}
+
 #column2 li#leg {
     position:absolute;
     z-index:3;
@@ -561,17 +627,16 @@ ul#column2 {
     bottom:53%;
     left:5%;
 }
-.legalimage,
-.safeimage,
+.legalimage {
+    background-image:url(../images/slide3/legal.png);
+}
+.safeimage{
+    background-image:url(../images/slide3/safe.png);
+}
 .confusingimage {
-    max-width:100%;
-  /*  border:1px solid red;*/
+    background-image:url(../images/slide3/confusing.png);
 }
-#column2 li#leg img,
-#column2 li#sfe img,
-#column2 li#cnf img {
-    max-width:100%;
-}
+
 /******************************* COLUMN 3 ****************************************/
 ul#column3 {
     position:absolute;
@@ -579,12 +644,6 @@ ul#column3 {
     left:34%;
     width:26%;
     height:100%;
-}
-#column3 li#bg,
-#column3 li#ob,
-#column3 li#sm,
-#column3 li#dg{
-  /*  border:1px blue solid;*/
 }
 #column3 li#bg {
     position:absolute;
@@ -608,18 +667,17 @@ ul#column3 {
     bottom:73%;
     left:45%;
 }
-.bigimage,
-.smallimage,
-.dangerousimage,
-.offbrandimage {
-    max-width:100%;
-  /*  border:1px solid red;*/
+.bigimage {
+    background-image:url(../images/slide3/big.png);
 }
-#column3 li#bg img,
-#column3 li#sm img,
-#column3 li#ob img,
-#column3 li#dg img {
-    max-width:100%;
+.smallimage {
+    background-image:url(../images/slide3/small.png);
+}
+.dangerousimage {
+    background-image:url(../images/slide3/dangerous.png);
+}
+.offbrandimage {
+    background-image:url(../images/slide3/offbrand.png);
 }
 /******************************* COLUMN 4 ****************************************/
 ul#column4 {
@@ -629,11 +687,6 @@ ul#column4 {
     width:21%;
     height:100%;
 }
-#column4 li#fn,
-#column4 li#rk{
- /*   border:1px blue solid;*/
-}
-
 #column4 li#rk{
     position:absolute;
     z-index:3;
@@ -645,14 +698,11 @@ ul#column4 {
     bottom:28%;
     right:0;
 }
-.funnyimage,
-.riskyimage {
-    max-width:100%;
-  /*  border:1px solid red;*/
+.funnyimage {
+    background-image:url(../images/slide3/funny.png);
 }
-#column4 li#fn img,
-#column4 li#rk img {
-    max-width:100%;
+.riskyimage {
+    background-image:url(../images/slide3/risky.png);
 }
 /******************************* COLUMN 5 ****************************************/
 ul#column5 {
@@ -662,9 +712,6 @@ ul#column5 {
     width:17%;
     height:100%;
 }
-#column5 li#oth{
-  /*  border:1px blue solid;*/
-}
 #column5 li#oth {
     position:absolute;
     z-index:3;
@@ -672,11 +719,7 @@ ul#column5 {
     right:0;
 }
 .otherimage {
-    max-width:100%;
-  /*  border:1px solid red;*/
-}
-#column5 li#oth img {
-    max-width:100%;
+    background-image:url(../images/slide3/other.png);
 }
 /******************************* END COLUMNS ****************************************/
 
@@ -685,21 +728,7 @@ input[type=checkbox] {
     position: relative;
    /* z-index: 4;*/
 }
-input[type=checkbox]{
-    display:none;
-}
-.myfailure span {
-    width:100px;
-    height:100px;
-    display:block;
-    background:url('../images/slide3/expensive.png');
-}
-.myfailure input + span:hover {
-    cursor:pointer;
-}
-.myfailure input:checked + span {
-    background:url('../images/slide3/expensivehover.png');
-}
+
 /******************************
  SLIDE 4 
 *******************************/
