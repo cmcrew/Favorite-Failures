@@ -55,14 +55,14 @@
 		<h1 class="yourinfo">First, Tell us about yourself</h1>
 	</div>
 	<div class="wrapper" id="yourinfo">
-    	    <form action="" id="submitIdea" method="post">	
+    	    <form action="/" id="submitIdea" method="post" enctype="multipart/form-data">	
 		<ul class="form1">
 		    <div class="yourphoto">
-			<input type="file" name="Upload a photo">
-			<div class="fakefile">
+			<input type="file" name="image">
+			<!--<div class="fakefile">
 			    <input />
 			    <img src="images/slide1/stamp.png" alt="your photo">			
-			</div>
+			</div> -->
 			<p>Upload a photo</p>
 		    </div>
 		    <li class="name"> <label for="creativeName">Name</label>
@@ -221,7 +221,7 @@
 	    <input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
 	</div>
 	<img src="images/slide4/page04a.png" alt="" class="transparency">
-	<input type="submit" name="submit" class="submit" title=""/>
+	<input type="submit" name="submit" class="submit" title="" value="submit"/>
     </div>
     <!--End Slide 4-->
 	</form>

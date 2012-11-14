@@ -8,6 +8,7 @@ module.exports.configureSchema = function(Schema, mongoose) {
       , creativeEmail : {type: String, required: true}
       , creativeOffice : {type: String, required: true}
       , teamMembers : String
+      , creativePhoto : [ImageSchema]
       
       , projectName     : {type: String, required: true}
       , clientName   : {type: String, required: true}
@@ -15,8 +16,16 @@ module.exports.configureSchema = function(Schema, mongoose) {
       , failedBecause      : String
       //, uploads : [uploadSchema]    
     });
+    
+    // Profile Image
+    var ImageSchema = new Schema({
+        filename: String
+        , timestamp : { type: Date, default: Date.now }
+        
+    });
 
     // add schemas to Mongoose
     mongoose.model('Project', Project);
+    mongoose.model('Image', ImageSchema);
 
 };
