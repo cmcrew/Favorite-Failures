@@ -8,6 +8,7 @@ var ejs = require('ejs'); //embedded javascript template engine
 var app = module.exports = express.createServer();
 var auth = require('http-auth'); //http authentication module
 var fs = require('fs');
+
 // YOUR BUCKET NAME
 var myBucket = 'favorite_failure';
 var knox = require('knox');
@@ -72,73 +73,71 @@ app.post('/', function(request,response) {
         path = request.files.image.path; //will be put into a temp directory
         type = request.files.image.type; // image/jpeg or actual mime type
                 
-        // 2) create file name with logged in user id + cleaned up existing file name. function defined below.
+    // 2) create file name with logged in user id + cleaned up existing file name. function defined below.
         cleanedFileName = cleanFileName(filename);
         console.log('*******************cleaned file name***********************');
         console.log(cleanedFileName);
        
-        // 3) we first read the file
-        fs.readFile(request.files.image.path, function(err, buf){
-        // 3a) We first need to open and read the file
-            fs.readFile(path, function(err, buf){
-                
-                // 3b) prepare PUT to Amazon S3
-                var req = S3Client.put(cleanedFileName, {
-                  'Content-Length': buf.length
-                , 'Content-Type': type
-                });
-                
-                // 3c) prepare 'response' callback from S3
-                req.on('response', function(res){
-                    console.log('Inside req.on');
-                    console.log(S3Client.bucket);
-                    
-                    if (200 == res.statusCode) {
-                        console.log('Inside 200 == res.statusCode');
-                        // create new Image
-                        var newImage = {
-                            filename : cleanedFileName
-                        };
-                        console.log('new image');
-                        console.log(newImage);
-                         //Create Project Object
-                        var projectData = {
-                                creativeName : request.body.creativeName
-                              , creativeEmail : request.body.creativeEmail
-                              , creativeOffice : request.body.creativeOffice
-                              , teamMembers : request.body.teamMembers
-                              , projectName     : request.body.projectName
-                              , clientName   : request.body.clientName
-                              , twitterPitch   : request.body.pitch
-                              , failedBecause      : request.body.failure
-                              //, creativePhoto : [newImage]
-                        };
-                        
-                        console.log('****************** Project Data ************************************');
-                        console.log(projectData);
-                        
-                        // create a new blog post
-                        var project = new Project(projectData);
-                        console.log(project);
-                        
-                        // save the blog post
-                        project.save();
-                        console.log('project ' + project.projectName + ' saved');
-                        
-                        response.redirect('/thanks');
-                    
-                    } else {
-                    
-                        response.send("an error occurred. unable to upload profile photo");
-                    
-                    }
-                });
+    // 3a) We first need to open and read the file
+        fs.readFile(path, function(err, buf){
             
-                // 3d) finally send the content of the file and end
-                req.end(buf);
+            // 3b) prepare PUT to Amazon S3
+            var req = S3Client.put(cleanedFileName, {
+              'Content-Length': buf.length
+            , 'Content-Type': type
             });
+            
+            // 3c) prepare 'response' callback from S3
+            req.on('response', function(res){
+                console.log('Inside req.on');
+                console.log(S3Client.bucket);
+                
+                if (200 == res.statusCode) {
+                    console.log('Inside 200 == res.statusCode');
+                    // create new Image
+                    var newImage = {
+                        filename : cleanedFileName
+                    };
+                    console.log('new image');
+                    console.log(newImage);
+                     //Create Project Object
+                    var projectData = {
+                            creativeName : request.body.creativeName
+                          , creativeEmail : request.body.creativeEmail
+                          , creativeOffice : request.body.creativeOffice
+                          , teamMembers : request.body.teamMembers
+                          , projectName     : request.body.projectName
+                          , clientName   : request.body.clientName
+                          , twitterPitch   : request.body.pitch
+                          , failedBecause      : request.body.failure
+                          //, creativePhoto : [newImage]
+                    };
+                    
+                    console.log('****************** Project Data ************************************');
+                    console.log(projectData);
+                    
+                    // create a new blog post
+                    var project = new Project(projectData);
+                    console.log(project);
+                    
+                    // save the blog post
+                    project.save();
+                    console.log('project ' + project.projectName + ' saved');
+                    
+                    response.redirect('/thanks');
+                
+                } else {
+                
+                    response.send("an error occurred. unable to upload profile photo");
+                    console.log(err);
+                
+                }
+            });
+        
+            // 3d) finally send the content of the file and end
+            req.end(buf);
+        });
      
-        }); 
 });
 
 app.get('/thanks', function(request,response) {
