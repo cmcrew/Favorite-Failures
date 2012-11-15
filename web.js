@@ -1,9 +1,7 @@
-var http = require('http');
 var express = require('express');
 var mongoose = require('mongoose');
 var schema = mongoose.Schema; 
 var requestURL = require('request');
-var moment = require('moment');
 var ejs = require('ejs'); //embedded javascript template engine
 var app = module.exports = express.createServer();
 var auth = require('http-auth'); //http authentication module
@@ -91,15 +89,17 @@ app.post('/', function(request,response) {
             req.on('response', function(res){
                 console.log('Inside req.on');
                 console.log(S3Client.bucket);
+                console.log(res.statusCode);
                 
-                if (200 == res.statusCode) {
+              /*  if (200 == res.statusCode) {
+                    console.log(res.statusCode);
                     console.log('Inside 200 == res.statusCode');
                     // create new Image
                     var newImage = {
                         filename : cleanedFileName
                     };
                     console.log('new image');
-                    console.log(newImage);
+                    console.log(newImage);*/
                      //Create Project Object
                     var projectData = {
                             creativeName : request.body.creativeName
@@ -126,12 +126,13 @@ app.post('/', function(request,response) {
                     
                     response.redirect('/thanks');
                 
-                } else {
+               /* }
+                else {
                 
                     response.send("an error occurred. unable to upload profile photo");
                     console.log(err);
                 
-                }
+                }*/
             });
         
             // 3d) finally send the content of the file and end

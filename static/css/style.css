@@ -33,7 +33,7 @@ html,body{
 
 .navigation{
 	position:fixed;
-	z-index:1;
+	z-index:100;
 	top:30%;
 }
 .navigation li{
@@ -64,7 +64,7 @@ html,body{
     position:fixed;
     bottom:1%;
     left:1%;
-    z-index:1;
+    z-index:10;
 }
 
 .wrapper{
@@ -102,11 +102,11 @@ input[type=submit].button{
 	position:absolute;
 	z-index:5;
 	bottom:1%;
-	left:50%;
+	left:47%;
 	font-family:'InTheKnow';
 	font-size:3.0em;
 	font-weight:bold;
-	color:rgba(255,255,255,1.0);
+	color:#2f3a45;
 }
 .submit:hover {
     color:rgba(255,255,255,0.5);
@@ -751,20 +751,86 @@ input[type=checkbox] {
 	-o-background-size: cover;
 	background-size: cover;	
 }
+.wrapper#spotlight {
+    background-image:url(../images/slide4/screen.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    position:relative;
+    font-size:0.9em;
+    top:10%;
+    width:34%;
+    height:70%;
+    margin:0 auto;
+    /*border:1px solid blue;*/
+}
+.spotlight {
+    position:absolute;
+    top:0;
+    left:30%;
+    height:100%;
+}
+.screen {
+    position:relative;
+    z-index:10;
+    margin:0 auto;
+    max-width:100%;
+}
 
 img.transparency{
 	position:absolute;
+	z-index:1;
 	bottom:0;
 	left:0;
 	width:100%;
 }
+img.curtainleft {
+    position:absolute;
+    z-index:5;
+    top:0;
+    height:100%;
+}
+img.curtainright {
+    position:absolute;
+    z-index:5;
+    top:0;
+    right:0;
+    height:100%;
+}
+img.microphone {
+    position:absolute;
+    z-index:6;
+    bottom:10%;
+    left:0;
+}
 .countdown{
     position: relative;
-    font-size: 18px;
-    left: 485px;
+    float:right;
+    right:15%;
+}
+p.pitch {
+        padding-top:10%;
+	line-height:2.0em;
 }
 .pitch{
-    font-size: 18px;
+    position:relative;
+    z-index:50;
+    left:10%;
+    color:black;
+    width:80%;
+    max-width:325px;
+  /*  border:1px solid green;*/
+}
+label.pitch {
+    display:inline;
+    font-size:1.2em;
+    line-height:2.0em;
+    
+}
+input.pitch {
+    /*border:1px solid red;   */
+}
+.fakeupload {
+    
 }
 
 /******************************

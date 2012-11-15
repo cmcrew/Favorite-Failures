@@ -59,10 +59,10 @@
 		<ul class="form1">
 		    <div class="yourphoto">
 			<input type="file" name="image">
-			<!--<div class="fakefile">
+			<div class="fakefile">
 			    <input />
-			    <img src="images/slide1/stamp.png" alt="your photo">			
-			</div> -->
+			    <img src="images/slide1/stamp.png" alt="your photo" />			
+			</div>
 			<p>Upload a photo</p>
 		    </div>
 		    <li class="name"> <label for="creativeName">Name</label>
@@ -206,19 +206,33 @@
 		</li>
 	    </ul>
 	</div>
-	<img src="images/slide3/page03a.png" alt="" class="transparency">
+	<img src="images/slide3/page03a.png" alt="" class="transparency"/>
 	<a class="button" id="slide2button" data-slide="4" title="">Next</a>    
     </div>
     <!--End Slide 3-->
     
     <!--Slide 4-->
     <div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0"">
-	<div class="wrapper">	
-	    <label for="pitch">Twitter Pitch: </label><br/>
-	    <textarea name="pitch" class="pitch" maxlength="140" required placeholder="Describe your idea in 140 characters or less" rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
+	<img src="images/slide4/curtainleft.png" alt="" class="curtainleft"/>
+	<img src="images/slide4/spotlight.png" alt="" class="spotlight" />
+	<img src="images/slide4/curtainright.png" alt="" class="curtainright"/>
+	<img src="images/slide4/microphone.png" alt="" class="microphone" />
+	<div class="failureinfo">
+	    <h1>Don't make the same mistake twice</h1>
+	    <p>Sell us on why your idea deserves another shot</p>
+	</div>
+	<div class="wrapper" id="spotlight">
+	    <p class="pitch">You're only 140 characters away. Pitch wisely.</p>
+	    <textarea name="pitch" class="pitch" maxlength="140" required rows="4" cols="50" onkeyup="limitTextCount('pitch', 'divcount', 140);" onkeydown="limitTextCount('title', 'divcount', 140);"></textarea><br>
 	    <span class="countdown" ></span><br/>
-	    <label for="upload">Upload some stuff to support your idea! </label><br/>
-	    <input type="file" name="supportingfiles" multiple="multiple"/><br/><br/>
+	    <div class="upload">
+		<label for="upload" class="pitch">Share your supporting evidence </label>
+		<input type="file" class="pitch" name="supportingfiles" multiple="multiple"/>
+		<!--<div class="fakeupload">
+		    <input />
+		    <img src="images/slide4/upload.png" alt="" />
+		</div>-->		
+	    </div>
 	</div>
 	<img src="images/slide4/page04a.png" alt="" class="transparency">
 	<input type="submit" name="submit" class="submit" title="" value="submit"/>
