@@ -458,6 +458,7 @@ h1.projectinfo {
 }
 .failureinfo {
     position:relative;
+    z-index:10;
     margin: 0 auto;
     top:3% !important;
 }
