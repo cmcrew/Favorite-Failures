@@ -16,7 +16,7 @@ var S3Client = knox.createClient({
     , bucket: myBucket
 });
 //------------------------- DATABASE CONFIGURATION -----------------------------//
-app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+//app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
 // Include models.js - this file includes the database schema and defines the models used
 require('./models').configureSchema(schema, mongoose);

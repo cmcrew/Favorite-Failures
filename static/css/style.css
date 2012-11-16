@@ -838,15 +838,63 @@ input.pitch {
  THANKS PAGE
 *******************************/
 .thanks {
-    margin:0 auto;
+    background-image:url(../images/slide4/page04.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    width:100%;
+    height:100%;
+    position: relative;
+    box-shadow:inset 0px 10px 10px rgba(0,0,0,0.3);
+}
+.wrapper#thanksmessage {
+    background-image:url(../images/slide4/thanksscreen.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    position:relative;
+    z-index:50;
+    font-size:0.9em;
     top:10%;
-    font-family:'InTheKnow';
+    width:34%;
+    height:70%;
+    margin:0 auto;
+    /*border:1px solid blue;*/
+}
+h1#thanks {
     font-size:4.0em;
+    color:white;
+    font-family:'InTheKnow';
     text-align:center;
-    letter-spacing:0.1em;
-    position:relative;  
+    padding:10%;
+    padding-bottom:0;
+}
+.thanks p {
+    text-align:center;
+}
+.message {
+    position:relative;
+    margin:0 auto;
+    z-index:50;
+    top:3%;
+    background:black;
+    width:95%;
+    max-width:377px;
+    height:80%;
+   /* border:1px solid blue;*/
 }
 .thanks a {
-    font-size:0.75em;
+    display:block;
+    position:relative;
+    margin:0 auto;
+    margin-top:5%;
+    padding:5px;
+    width:175px;
+    text-align:center;
+    text-decoration:none;
+    background:#FF6633;
+    color:white;
+    font-size:1.0em;
     letter-spacing:normal;
 }
