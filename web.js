@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var schema = mongoose.Schema; 
 var requestURL = require('request');
+//var format = require('util').format;
 var ejs = require('ejs'); //embedded javascript template engine
 var app = module.exports = express.createServer();
 var auth = require('http-auth'); //http authentication module
@@ -9,14 +10,16 @@ var fs = require('fs');
 
 // YOUR BUCKET NAME
 var myBucket = 'favorite_failure';
+
 var knox = require('knox');
+
 var S3Client = knox.createClient({
       key: process.env.AWS_KEY
     , secret: process.env.AWS_SECRET
     , bucket: myBucket
 });
 //------------------------- DATABASE CONFIGURATION -----------------------------//
-//app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
 // Include models.js - this file includes the database schema and defines the models used
 require('./models').configureSchema(schema, mongoose);
@@ -67,39 +70,44 @@ app.post('/', function(request,response) {
     console.log(request.files);
     
     // 1) Get file information from submitted form
-        filename = request.files.image.filename; // actual filename of file
-        path = request.files.image.path; //will be put into a temp directory
-        type = request.files.image.type; // image/jpeg or actual mime type
+        filenameProfileImage = request.files.image.filename; // actual filename of file
+        pathProfileImage = request.files.image.path; //will be put into a temp directory
+        typeProfileImage = request.files.image.type; // image/jpeg or actual mime type
+        
+    //Information for submitted materials
+      /*  filenameDocs = request.files.supportingfiles.filename;
+        pathDocs = request.files.supportingfiles.path;
+        typeDocs = request.files.supportingfiles.type;*/
                 
     // 2) create file name with logged in user id + cleaned up existing file name. function defined below.
-        cleanedFileName = cleanFileName(filename);
+        cleanedFileNamePI = cleanFileName(filenameProfileImage);
+       // cleanedFileNameDocs = cleanFileName(filenameDocs);
         console.log('*******************cleaned file name***********************');
-        console.log(cleanedFileName);
+        console.log(cleanedFileNamePI);
+       // console.log(cleanedFileNameDocs);
        
     // 3a) We first need to open and read the file
-        fs.readFile(path, function(err, buf){
+        fs.readFile(pathProfileImage, function(err, buf){
             
             // 3b) prepare PUT to Amazon S3
-            var req = S3Client.put(cleanedFileName, {
+            var req = S3Client.put(cleanedFileNamePI, {
               'Content-Length': buf.length
-            , 'Content-Type': type
+            , 'Content-Type': typeProfileImage
             });
+            // for debugging purposes
+            console.log(req);
             
             // 3c) prepare 'response' callback from S3
-            req.on('response', function(res){
-                console.log('Inside req.on');
-                console.log(S3Client.bucket);
-                console.log(res.statusCode);
-                
-              /*  if (200 == res.statusCode) {
-                    console.log(res.statusCode);
+            req.on('response', function(res){                
+                if (200 == res.statusCode) {
                     console.log('Inside 200 == res.statusCode');
                     // create new Image
                     var newImage = {
-                        filename : cleanedFileName
+                        filename : cleanedFileNamePI
                     };
                     console.log('new image');
-                    console.log(newImage);*/
+                    console.log(newImage);
+                    
                      //Create Project Object
                     var projectData = {
                             creativeName : request.body.creativeName
@@ -110,7 +118,7 @@ app.post('/', function(request,response) {
                           , clientName   : request.body.clientName
                           , twitterPitch   : request.body.pitch
                           , failedBecause      : request.body.failure
-                          //, creativePhoto : [newImage]
+                          , creativePhoto : [newImage]
                     };
                     
                     console.log('****************** Project Data ************************************');
@@ -118,6 +126,7 @@ app.post('/', function(request,response) {
                     
                     // create a new blog post
                     var project = new Project(projectData);
+                    console.log('****************** Project ************************************');
                     console.log(project);
                     
                     // save the blog post
@@ -126,13 +135,13 @@ app.post('/', function(request,response) {
                     
                     response.redirect('/thanks');
                 
-               /* }
+                }
                 else {
                 
                     response.send("an error occurred. unable to upload profile photo");
                     console.log(err);
                 
-                }*/
+                }
             });
         
             // 3d) finally send the content of the file and end
