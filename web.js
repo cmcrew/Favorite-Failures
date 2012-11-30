@@ -75,6 +75,8 @@ app.post('/', function(request,response) {
         typeProfileImage = request.files.image.type; // image/jpeg or actual mime type
         
     //Information for submitted materials
+    //supportingdocs = request.files.supportingfiles;
+    //for loop that goes through supporting docs and creates filename, path, and type.
       /*  filenameDocs = request.files.supportingfiles.filename;
         pathDocs = request.files.supportingfiles.path;
         typeDocs = request.files.supportingfiles.type;*/
