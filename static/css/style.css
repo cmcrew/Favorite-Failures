@@ -48,7 +48,7 @@ html,body{
 	-webkit-transition: all .2s ease-in-out;
 	text-align:left;
 }
-.navigation li:hover,.active{
+.navigation li:hover, .navigation li.active {
 	color:rgba(255,255,255,1.0);
 	font-size:3.0em;
 	cursor:pointer;

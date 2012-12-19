@@ -26,6 +26,9 @@ jQuery(document).ready(function ($) {
 
         //cache the variable of the data-slide attribute associated with each slide
         dataslide = $(this).attr('data-slide');
+        moveDirection = direction;
+        changeLogoColor();
+        checkNavigation();
 
         //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to active and 
         //remove the active class from the previous navigation link 
@@ -43,9 +46,9 @@ jQuery(document).ready(function ($) {
     //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class 
     //from navigation link slide 2 and adds it to navigation link slide 1. 
     mywindow.scroll(function () {
-        if (mywindow.scrollTop() == 0) {
-            $('.navigation li[data-slide="1"]').addClass('active');
-            $('.navigation li[data-slide="2"]').removeClass('active');
+        if (mywindow.scrollTop() === 0) {
+           // $('.navigation li[data-slide="1"]').addClass('active');
+            $('.navigation li[data-slide="1"]').removeClass('active');
         }
     });
 
@@ -64,7 +67,7 @@ jQuery(document).ready(function ($) {
         goToByScroll(dataslide);
     });
 
-    //When the user clicks on the button, get the get the data-slide attribute value of the button and pass that variable to the goToByScroll function
+    //When the user clicks on the button, get the data-slide attribute value of the button and pass that variable to the goToByScroll function
     button.click(function (e) {
         e.preventDefault();
         dataslide = $(this).attr('data-slide');
@@ -75,11 +78,27 @@ jQuery(document).ready(function ($) {
     //function to change color of logo from light to dark on slide 3
     function changeLogoColor() {
         var logo = $('.razorfishlogo');
-        if(dataslide === '2') {
-            $('.razorfishlogo').attr('src', 'images/rflogodark.png');
+        if((dataslide === '2' && moveDirection === 'up') || (dataslide === '2' && moveDirection === 'down')) {
+            //fade out logo and fade in new logo
+            $('.razorfishlogo').fadeOut('fast', function() {
+                $(this).load(function() { $(this).fadeIn();});
+                $(this).attr('src', 'images/rflogodark.png');
+            });
+        }
+        else if ($('.razorfishlogo').attr('src') === 'images/rflogodark.png') {
+            $('.razorfishlogo').fadeOut('fast', function() {
+                $(this).load(function() {$(this).fadeIn(); });
+                $(this).attr('src', 'images/rflogo.png');
+            });
+        }
+    }
+    
+    function checkNavigation() {
+        if(dataslide !== '0') {
+            $('.navigation li').show();
         }
         else {
-            $('.razorfishlogo').attr('src', 'images/rflogo.png');
+            $('.navigation li').hide();
         }
     }
 
