@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
         dataslide = $(this).attr('data-slide');
         moveDirection = direction;
         changeLogoColor();
-        checkNavigation();
+        //checkNavigation();
 
         //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to active and 
         //remove the active class from the previous navigation link 
@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
     //from navigation link slide 2 and adds it to navigation link slide 1. 
     mywindow.scroll(function () {
         if (mywindow.scrollTop() === 0) {
-           // $('.navigation li[data-slide="1"]').addClass('active');
+            $('.navigation li[data-slide="1"]').addClass('active');
             $('.navigation li[data-slide="1"]').removeClass('active');
         }
     });
