@@ -19,7 +19,7 @@ var S3Client = knox.createClient({
     , bucket: myBucket
 });
 //------------------------- DATABASE CONFIGURATION -----------------------------//
-//app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
 // Include models.js - this file includes the database schema and defines the models used
 require('./models').configureSchema(schema, mongoose);
@@ -75,18 +75,33 @@ app.post('/', function(request,response) {
         typeProfileImage = request.files.image.type; // image/jpeg or actual mime type
         
     //Information for submitted materials
-    //supportingdocs = request.files.supportingfiles;
+    supportingdocs = request.files.supportingfiles;
+    console.log('Supporting Docs!!!!!!!!!!!!!!!!!!!!!!');
+    console.log(supportingdocs);
+    console.log('Supporting Docs Ending!!!!!!!!!!');
+    var cleanedFileNameDocs = [];
+    var filenameDocs = [];
+    var pathDocs = [];
+    var typeDocs = [];
+    
     //for loop that goes through supporting docs and creates filename, path, and type.
-      /*  filenameDocs = request.files.supportingfiles.filename;
-        pathDocs = request.files.supportingfiles.path;
-        typeDocs = request.files.supportingfiles.type;*/
+    for(var i = 0; i < supportingdocs.length; i++) {
+      filenameDocs.push(request.files.supportingfiles[i].filename);
+      pathDocs.push(request.files.supportingfiles[i].path);
+      typeDocs.push(request.files.supportingfiles[i].type);
+    }
+      console.log('*******************supportingdocs file info***********************');
+      console.log(filenameDocs);
                 
     // 2) create file name with logged in user id + cleaned up existing file name. function defined below.
         cleanedFileNamePI = cleanFileName(filenameProfileImage);
+        for(var j = 0; j < filenameDocs.length; j++) {
+            cleanedFileNameDocs.push(cleanFileName(filenameDocs[j]));
+        }
        // cleanedFileNameDocs = cleanFileName(filenameDocs);
-        console.log('*******************cleaned file name***********************');
+        console.log('*******************cleaned file names***********************');
         console.log(cleanedFileNamePI);
-       // console.log(cleanedFileNameDocs);
+        console.log(cleanedFileNameDocs);
        
     // 3a) We first need to open and read the file
         fs.readFile(pathProfileImage, function(err, buf){
@@ -110,6 +125,13 @@ app.post('/', function(request,response) {
                     console.log('new image');
                     console.log(newImage);
                     
+                    //create new upload file array?
+                    var uploadFiles = {
+                        filename: cleanedFileNameDocs
+                    };
+                    console.log('new file');
+                    console.log(uploadFiles);
+                    
                      //Create Project Object
                     var projectData = {
                             creativeName : request.body.creativeName
@@ -121,6 +143,7 @@ app.post('/', function(request,response) {
                           , twitterPitch   : request.body.pitch
                           , failedBecause      : request.body.failure
                           , creativePhoto : [newImage]
+                          , uploads : [uploadFiles.filename]
                     };
                     
                     console.log('****************** Project Data ************************************');
