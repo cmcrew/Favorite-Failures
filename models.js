@@ -14,7 +14,7 @@ module.exports.configureSchema = function(Schema, mongoose) {
       , clientName   : {type: String, required: true}
       , twitterPitch   : {type: String, required: true}
       , failedBecause      : String
-      , uploads : [uploadSchema]    
+      //, uploads : [uploadSchema]    
     });
     
     // Profile Image
@@ -23,12 +23,6 @@ module.exports.configureSchema = function(Schema, mongoose) {
         , timestamp : { type: Date, default: Date.now }
         
     });
-    
-    var uploadSchema = new Schema({
-        filename: String
-        , timestamp : { type: Date, default: Date.now}
-    });
-
     // add schemas to Mongoose
     mongoose.model('Project', Project);
     mongoose.model('Image', ImageSchema);

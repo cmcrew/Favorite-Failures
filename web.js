@@ -19,7 +19,8 @@ var S3Client = knox.createClient({
     , bucket: myBucket
 });
 //------------------------- DATABASE CONFIGURATION -----------------------------//
-app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
+
+//app.db = mongoose.connect(process.env.MONGOLAB_URI); //connect to the mongolabs database - local server uses .env file
 
 // Include models.js - this file includes the database schema and defines the models used
 require('./models').configureSchema(schema, mongoose);
@@ -75,6 +76,7 @@ app.post('/', function(request,response) {
         typeProfileImage = request.files.image.type; // image/jpeg or actual mime type
         
     //Information for submitted materials
+<<<<<<< HEAD
     supportingdocs = request.files.supportingfiles;
     console.log('Supporting Docs!!!!!!!!!!!!!!!!!!!!!!');
     console.log(supportingdocs);
@@ -102,6 +104,20 @@ app.post('/', function(request,response) {
         console.log('*******************cleaned file names***********************');
         console.log(cleanedFileNamePI);
         console.log(cleanedFileNameDocs);
+=======
+    //supportingdocs = request.files.supportingfiles;
+    //for loop that goes through supporting docs and creates filename, path, and type.
+      /*  filenameDocs = request.files.supportingfiles.filename;
+        pathDocs = request.files.supportingfiles.path;
+        typeDocs = request.files.supportingfiles.type;*/
+                
+    // 2) create file name with logged in user id + cleaned up existing file name. function defined below.
+        cleanedFileNamePI = cleanFileName(filenameProfileImage);
+       // cleanedFileNameDocs = cleanFileName(filenameDocs);
+        console.log('*******************cleaned file name***********************');
+        console.log(cleanedFileNamePI);
+       // console.log(cleanedFileNameDocs);
+>>>>>>> 3b801459cd9d5b9102daabba909911af4242cf7d
        
     // 3a) We first need to open and read the file
         fs.readFile(pathProfileImage, function(err, buf){
@@ -125,6 +141,7 @@ app.post('/', function(request,response) {
                     console.log('new image');
                     console.log(newImage);
                     
+<<<<<<< HEAD
                     //create new upload file array?
                     var uploadFiles = {
                         filename: cleanedFileNameDocs
@@ -132,6 +149,8 @@ app.post('/', function(request,response) {
                     console.log('new file');
                     console.log(uploadFiles);
                     
+=======
+>>>>>>> 3b801459cd9d5b9102daabba909911af4242cf7d
                      //Create Project Object
                     var projectData = {
                             creativeName : request.body.creativeName
@@ -143,7 +162,10 @@ app.post('/', function(request,response) {
                           , twitterPitch   : request.body.pitch
                           , failedBecause      : request.body.failure
                           , creativePhoto : [newImage]
+<<<<<<< HEAD
                           , uploads : [uploadFiles.filename]
+=======
+>>>>>>> 3b801459cd9d5b9102daabba909911af4242cf7d
                     };
                     
                     console.log('****************** Project Data ************************************');
